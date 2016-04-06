@@ -1,0 +1,28 @@
+<md-dialog class="comment-dialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h3>{{detail.title.removeTags() || '메모'}}
+            </h3>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon><i>close</i></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content class="md-dialog-content">
+        <div class="detail">
+            <div ng-bind-html="detail.description"></div>
+            <small class="grey" ng-click="moveLink()" class="hover-underline">상세페이지</small>
+        </div>
+        <md-input-container class="md-prompt-input-container">
+            <label>생각</label>
+            <textarea ng-model="detail.comment"></textarea>
+        </md-input-container>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <span flex></span>
+        <md-button ng-click="hide(detail.comment)" style="margin-right:20px;">
+            저장하기
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,38 @@
+.movies {
+  md-grid-tile {
+    background-size: cover;
+  }
+}
+
+.md-block.movie-search {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.collection {
+  min-height: 104px;
+  background: #f4f4f4;
+  text-align: center;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+  width: 100%;
+  .summary {
+    width: 100px;
+    display: inline-block;
+    margin: 15px 8px;
+    text-align: center;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 3px;
+    }
+    div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+    }
+  }
+}
