@@ -17,6 +17,36 @@
             <label>패스워드</label>
             <input ng-model="user.password" type="password"/>
         </md-input-container>
+        <md-input-container class="md-block movie-search">
+            <label>이름</label>
+            <input ng-model="user.name">
+        </md-input-container>
+        <md-input-container class="md-block movie-search">
+            <label>나이</label>
+            <input ng-model="user.age">
+        </md-input-container>
+        <md-input-container>
+            <label>성별</label>
+            <md-select ng-model="user.gender">
+                <md-option value="male">
+                    남
+                </md-option>
+                <md-option value="female">
+                    여
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container class="margin-top">
+            <label>지역</label>
+            <md-select ng-model="user.district">
+                <md-option value="seoul">
+                    서울
+                </md-option>
+                <md-option value="gyungi">
+                    경기
+                </md-option>
+            </md-select>
+        </md-input-container>
     </md-dialog-content>
     <md-dialog-actions>
         <div flex>

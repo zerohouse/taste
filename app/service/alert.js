@@ -28,7 +28,7 @@
                     .textContent(text)
                     .ariaLabel('alert')
                     .ok('확인')
-                )
+                );
         };
 
         return toast;

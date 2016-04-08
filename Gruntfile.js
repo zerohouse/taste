@@ -347,14 +347,14 @@ module.exports = function (grunt) {
         },
 
         // CDN에 있는 내용으로 변환
-        cdnify: {
-            options: {
-                cdn: require('next-cdn')
-            },
-            app: {
-                html: ['<%= config.app %>/*.html']
-            }
-        },
+        // cdnify: {
+        //     options: {
+        //         cdn: require('next-cdn')
+        //     },
+        //     app: {
+        //         html: ['<%= config.app %>/*.html']
+        //     }
+        // },
 
         copy: {
             dist: {
@@ -422,7 +422,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'jshint:all',
         'wiredep',
-        'cdnify',
+        // 'cdnify',
         'ngtemplates',
         'includeSource',
         'useminPrepare',

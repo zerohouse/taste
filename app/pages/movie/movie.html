@@ -13,8 +13,11 @@
                     <md-list-item class="md-3-line" ng-click="movie.addAndDetail('.wrapper')"
                                   ng-repeat="movie in ctrl.movies | limitTo : ctrl.movieLength"
                                   aria-label="{{movie.title}}">
-                        <img alt="{{ movie.title }}" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"
-                             class="md-avatar"/>
+                        <!--<img alt="{{ movie.title }}" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"-->
+                             <!--class="md-avatar"/>-->
+                        <div class="margin-right">
+                            <i>Movie</i>
+                        </div>
                         <div class="md-list-item-text" layout="column">
                             <h3><span class="hover-underline" ng-bind-html="movie.title"
                                       ng-click="root.openNewTab(movie.link, $event);"></span></h3>

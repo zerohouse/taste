@@ -11,7 +11,7 @@
             user.setProperties = this.setProperties;
             user.logout = this.logout;
             angular.copy(user,this);
-        }
+        };
     }
 
 

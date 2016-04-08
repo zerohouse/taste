@@ -13,8 +13,11 @@
                     <md-list-item class="md-3-line" ng-click="book.addAndDetail('.wrapper')"
                                   ng-repeat="book in ctrl.books | limitTo : ctrl.bookLength"
                                   aria-label="{{book.title}}">
-                        <img alt="{{ book.title }}" ng-src="{{ book.image || '/resources/icons/book.png' }}"
-                             class="md-avatar"/>
+                        <!--<img alt="{{ book.title }}" ng-src="{{ book.image || '/resources/icons/book.png' }}"-->
+                             <!--class="md-avatar"/>-->
+                        <div class="margin-right">
+                            <i>Book</i>
+                        </div>
                         <div class="md-list-item-text" layout="column">
                             <h3 style="margin-top: 20px">
                                 <span class="hover-underline" ng-bind-html="book.title"

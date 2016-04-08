@@ -23,7 +23,7 @@
                 query.id = this.id;
                 query.comment = comment;
                 $ajax.post('/api/v1/movie/update', query).then(()=> {
-                    this.comment = comment
+                    this.comment = comment;
                 });
             });
         };

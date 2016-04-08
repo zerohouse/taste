@@ -16,7 +16,7 @@
             if (!finded) {
                 $ajax.post('/api/v1/book', this, true).then(resonpose=> {
                     rootUser.books.push(new Book(resonpose.result));
-                    alert($hangul.get_With_이가(book.title.removeTags()) + " 콜렉션에 추가되었습니다.", document.querySelector(selector));
+                    alert($hangul.get_With_이가(this.title.removeTags()) + " 콜렉션에 추가되었습니다.", document.querySelector(selector));
                 });
                 return;
             }
@@ -59,7 +59,7 @@
                 query.id = this.id;
                 query.comment = comment;
                 $ajax.post('/api/v1/book/update', query).then(()=> {
-                    this.comment = comment
+                    this.comment = comment;
                 });
             });
         };

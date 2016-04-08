@@ -5,17 +5,25 @@
         var ajax, self = this;
         this.keyword = '';
 
+        var defaults;
+        $ajax.get('/resources/data/movies.json').then(movies=> {
+            defaults = this.movies = movies.map(movie=> {
+                return new Movie(movie);
+            });
+        });
+
         $scope.$watch(()=> {
-            return this.keyword
+            return this.keyword;
         }, keyword=> {
-            if (!keyword)
-                return;
             $timeout.cancel(ajax);
+            if (!keyword) {
+                this.movies = defaults;
+                return;
+            }
             ajax = $timeout(function () {
                 getMovies(keyword);
             }, 300);
         });
-
 
         function getMovies(keyword) {
             $ajax.get('/api/v1/search/movie', {query: keyword}).then(response=> {
@@ -23,7 +31,7 @@
                     return new Movie(movie);
                 });
                 self.movieLength = 10;
-            })
+            });
         }
 
         this.more = ()=> {

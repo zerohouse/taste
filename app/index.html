@@ -2,14 +2,14 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
-    <title>Begin.at</title>
+    <title>서비스 이름 미정</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <!-- build:css(.) /styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css"/>
-    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
+    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
@@ -43,12 +43,12 @@
         md-disable-backdrop
         md-whiteframe="4">
     <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">Begin.at 여기서.시작</h1>
+        <h1 class="md-toolbar-tools" ng-click="root.go('main')">서비스 이름 미정</h1>
     </md-toolbar>
     <md-list>
-        <md-list-item ng-click="root.go('movie')">
+        <md-list-item ng-click="root.go('match')">
             <md-icon><i>people</i></md-icon>
-            <p>오늘의 인연</p>
+            <p>비슷한 취향의 사람</p>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item ng-click="root.go('movie')">
@@ -137,6 +137,8 @@
 <script src="/model/music.js"></script>
 <script src="/pages/book/book.ctrl.js"></script>
 <script src="/pages/collection/collection.ctrl.js"></script>
+<script src="/pages/main/main.ctrl.js"></script>
+<script src="/pages/match/match.ctrl.js"></script>
 <script src="/pages/movie/movie.ctrl.js"></script>
 <script src="/pages/music/music.js"></script>
 <script src="/pages/root.ctrl.js"></script>
@@ -146,6 +148,7 @@
 <script src="/service/alert.js"></script>
 <script src="/service/commentDialog/commentDialog.js"></script>
 <script src="/service/confirm.js"></script>
+<script src="/service/items.js"></script>
 <script src="/service/loginDialog/loginDialog.js"></script>
 <script src="/service/registerDialog/registerDialog.js"></script>
 <script src="/service/rootUser.js"></script>

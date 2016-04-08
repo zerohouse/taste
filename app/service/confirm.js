@@ -1,7 +1,7 @@
 (function () {
-    angular.module('app').factory('confirm', confirm);
+    angular.module('app').factory('confirm', confirmFactory);
     /* @ng-inject */
-    function confirm($mdDialog) {
+    function confirmFactory($mdDialog) {
         var confirm = function (title, description) {
             var confirm = $mdDialog.confirm()
                 .title(title)
