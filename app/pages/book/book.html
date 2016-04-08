@@ -1,0 +1,72 @@
+<div flex layout="column">
+    <div flex layout="column" class="wrapper">
+        <div class="container">
+            <md-input-container class="md-block movie-search">
+                <label>검색어</label>
+                <md-icon><i>search</i></md-icon>
+                <input ng-model="ctrl.keyword">
+            </md-input-container>
+        </div>
+        <div flex class="overlay">
+            <div class="container">
+                <md-list flex ng-cloak>
+                    <md-list-item class="md-3-line" ng-click="book.addAndDetail('.wrapper')"
+                                  ng-repeat="book in ctrl.books | limitTo : ctrl.bookLength"
+                                  aria-label="{{book.title}}">
+                        <img alt="{{ book.title }}" ng-src="{{ book.image || '/resources/icons/book.png' }}"
+                             class="md-avatar"/>
+                        <div class="md-list-item-text" layout="column">
+                            <h3 style="margin-top: 20px">
+                                <span class="hover-underline" ng-bind-html="book.title"
+                                      ng-click="root.openNewTab(book.link, $event);"></span>
+                            </h3>
+                            <p>
+                                 <span ng-if="book.authors.length>0 && book.authors[0]">
+                                    <strong>작가</strong>
+                                    <span ng-repeat="author in book.authors | limitTo : 3">
+                                        {{author}}
+                                        <span ng-if="!$last">,</span>
+                                    </span>
+                                </span>
+                                <span ng-if="book.publisher">
+                                    <strong>출판사</strong>
+                                    {{book.publisher}}
+                                </span>
+                            </p>
+                            <p style="margin-bottom: 20px" ng-bind-html="book.description"></p>
+                        </div>
+                        <md-icon ng-if="!root.user.books.findById(book.id)">
+                            <i>add</i>
+                        </md-icon>
+                        <div class="green" ng-if="root.user.books.findById(book.id)"
+                             ng-click="book.removeFromCollection($event);">
+                            <md-icon><i>check</i></md-icon>
+                            추가됨
+                        </div>
+                        <md-divider ng-if="!$last || ctrl.books.length > ctrl.bookLength"></md-divider>
+                    </md-list-item>
+                    <md-list-item class="md-3-line" ng-show="ctrl.books.length > ctrl.bookLength"
+                                  ng-click="ctrl.more()">
+                        <md-icon><i>more</i></md-icon>
+                        <div class="md-list-item-text" layout="column">
+                            <h3>더보기</h3>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+    </div>
+    <div class="collection" ng-if="root.user.books.length>0">
+        <div layout="column" aria-label="{{book.title}}" ng-repeat="book in root.user.books | limitTo : 5"
+             ng-click="book.openCommentDialog()"
+             class="summary">
+            <img alt="{{book.title}}" class="md-avatar" ng-src="{{ book.image || '/resources/icons/book.png' }}"/>
+            <div>
+                {{book.title.removeTags()}}
+            </div>
+            <div ng-click="book.removeFromCollection($event);">
+                <small class="grey">삭제</small>
+            </div>
+        </div>
+    </div>
+</div>

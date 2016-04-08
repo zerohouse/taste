@@ -3,12 +3,16 @@
     /* @ng-inject */
     function rootUser() {
         this.setProperties = (properties) => {
-            this.name = properties.name;
-            this.phone = properties.phone;
-            this.email = properties.email;
-            this.movies = properties.movies;
-            this.songs = properties.songs;
-            this.books = properties.books;
+            angular.merge(this, properties);
         };
+
+        this.logout = () => {
+            var user = {};
+            user.setProperties = this.setProperties;
+            user.logout = this.logout;
+            angular.copy(user,this);
+        }
     }
+
+
 })();

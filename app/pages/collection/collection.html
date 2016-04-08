@@ -1,0 +1,102 @@
+<div flex class="overlay">
+    <div class="container">
+        <md-input-container class="md-block movie-search">
+            <label>검색어</label>
+            <md-icon><i>search</i></md-icon>
+            <input ng-model="ctrl.keyword">
+        </md-input-container>
+        <md-list flex ng-cloak>
+            <div ng-show="ctrl.movies.length > 0">
+                <md-subheader>영화</md-subheader>
+                <md-list-item class="md-3-line" ng-click="movie.addAndDetail('.wrapper')"
+                              ng-repeat="movie in ctrl.movies = (root.user.movies | limitTo : 3 | filter:ctrl.keyword)"
+                              aria-label="{{movie.title}}">
+                    <img alt="{{ movie.title }}" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"
+                         class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <h3><span class="hover-underline" ng-bind-html="movie.title"
+                                  ng-click="root.openNewTab(movie.link, $event);"></span></h3>
+                        <h4 ng-bind-html="movie.subtitle"></h4>
+                        <p>
+                        <span ng-if="movie.directors.length>0 && movie.directors[0]">
+                        <strong>감독</strong>
+                            <span ng-repeat="director in movie.directors | limitTo : 3">{{director}}<span
+                                    ng-if="!$last">,</span> </span>
+                        </span>
+                        <span ng-if="movie.actors.length>0 && movie.actors[0]"><strong>출연진</strong> <span
+                                ng-repeat="actor in movie.actors | limitTo : 3">{{actor}}<span ng-if="!$last">,</span> </span>
+                        </span>
+                        </p>
+                    </div>
+                    <md-icon ng-if="!root.user.movies.findById(movie.id)">
+                        <i>add</i>
+                    </md-icon>
+                    <div class="green" ng-if="root.user.movies.findById(movie.id)"
+                         ng-click="movie.removeFromCollection($event);">
+                        <md-icon><i>check</i></md-icon>
+                    </div>
+                </md-list-item>
+            </div>
+
+            <div ng-show="ctrl.musics.length > 0">
+                <md-subheader>음악</md-subheader>
+                <md-list-item class="md-3-line" ng-click="music.addAndDetail('.wrapper')"
+                              ng-repeat="music in ctrl.musics = (root.user.musics | limitTo : 3 | filter:ctrl.keyword)"
+                              aria-label="{{music.title}}">
+                    <img alt="{{ music.title }}" src="/resources/icons/artist.jpg" class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <h3><span class="hover-underline" ng-bind-html="music.title"
+                                  ng-click="root.openNewTab(music.link, $event);"></span>
+                        </h3>
+                        <h4 ng-bind-html="music.description"></h4>
+                    </div>
+                    <md-icon ng-if="!root.user.musics.findById(music.id)">
+                        <i>add</i>
+                    </md-icon>
+                    <div class="green" ng-if="root.user.musics.findById(music.id)"
+                         ng-click="music.removeFromCollection($event);">
+                        <md-icon><i>check</i></md-icon>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+            </div>
+
+
+            <div ng-show="ctrl.books.length > 0">
+                <md-subheader>책</md-subheader>
+                <md-list-item class="md-3-line" ng-click="book.addAndDetail('.wrapper')"
+                              ng-repeat="book in ctrl.books = (root.user.books | limitTo : 3 | filter:ctrl.keyword)"
+                              aria-label="{{book.title}}">
+                    <img alt="{{ book.title }}" ng-src="{{ book.image || '/resources/icons/book.png' }}"
+                         class="md-avatar"/>
+                    <div class="md-list-item-text" layout="column">
+                        <h3 style="margin-top: 20px">
+                                <span class="hover-underline" ng-bind-html="book.title"
+                                      ng-click="root.openNewTab(book.link, $event);"></span>
+                        </h3>
+                        <p>
+                                 <span ng-if="book.authors.length>0 && book.authors[0]">
+                                    <strong>작가</strong>
+                                    <span ng-repeat="author in book.authors | limitTo : 3">
+                                        {{author}}
+                                        <span ng-if="!$last">,</span>
+                                    </span>
+                                </span>
+                                <span ng-if="book.publisher">
+                                    <strong>출판사</strong>
+                                    {{book.publisher}}
+                                </span>
+                        </p>
+                        <p style="margin-bottom: 20px" ng-bind-html="book.description"></p>
+                    </div>
+                    <md-icon ng-if="!root.user.books.findById(book.id)">
+                        <i>add</i>
+                    </md-icon>
+                    <div class="green" ng-if="root.user.books.findById(book.id)"
+                         ng-click="book.removeFromCollection($event);">
+                        <md-icon><i>check</i></md-icon>
+                    </div>
+                </md-list-item>
+            </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 <div flex layout="column">
-    <div flex layout="column" class="movie-wrapper">
+    <div flex layout="column" class="wrapper">
         <div class="container">
             <md-input-container class="md-block movie-search">
                 <label>검색어</label>
@@ -10,35 +10,38 @@
         <div flex class="overlay">
             <div class="container">
                 <md-list flex ng-cloak>
-                    <md-list-item class="md-3-line" ng-click="ctrl.addAndDetail(movie)" ng-repeat="movie in ctrl.movies | limitTo : ctrl.movieLength"
+                    <md-list-item class="md-3-line" ng-click="movie.addAndDetail('.wrapper')"
+                                  ng-repeat="movie in ctrl.movies | limitTo : ctrl.movieLength"
                                   aria-label="{{movie.title}}">
                         <img alt="{{ movie.title }}" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"
                              class="md-avatar"/>
                         <div class="md-list-item-text" layout="column">
                             <h3><span class="hover-underline" ng-bind-html="movie.title"
-                                      ng-click="ctrl.openDetailPage(movie.link);$event.stopPropagation()"></span></h3>
+                                      ng-click="root.openNewTab(movie.link, $event);"></span></h3>
                             <h4 ng-bind-html="movie.subtitle"></h4>
                             <p>
-                    <span ng-if="movie.directors.length>0 && movie.directors[0]">
-                        <strong>감독</strong> <span
-                            ng-repeat="director in movie.directors | limitTo : 3">{{director}}<span
-                            ng-if="!$last">,</span> </span></span>
-                <span ng-if="movie.actors.length>0 && movie.actors[0]"><strong>출연진</strong> <span
-                        ng-repeat="actor in movie.actors | limitTo : 3">{{actor}}<span ng-if="!$last">,</span> </span> </span>
+                        <span ng-if="movie.directors.length>0 && movie.directors[0]">
+                        <strong>감독</strong>
+                            <span ng-repeat="director in movie.directors | limitTo : 3">{{director}}<span
+                                    ng-if="!$last">,</span> </span>
+                        </span>
+                        <span ng-if="movie.actors.length>0 && movie.actors[0]"><strong>출연진</strong> <span
+                                ng-repeat="actor in movie.actors | limitTo : 3">{{actor}}<span ng-if="!$last">,</span> </span>
+                        </span>
                             </p>
                         </div>
-                        <md-icon ng-if="!root.user.movies.findBy('link', movie.link)">
+                        <md-icon ng-if="!root.user.movies.findById(movie.id)">
                             <i>add</i>
                         </md-icon>
-                        <div class="green" ng-if="root.user.movies.findBy('link', movie.link)"
-                             ng-click="ctrl.removeFromCollection(movie);$event.stopPropagation();">
+                        <div class="green" ng-if="root.user.movies.findById(movie.id)"
+                             ng-click="movie.removeFromCollection($event);">
                             <md-icon><i>check</i></md-icon>
                             추가됨
                         </div>
                         <md-divider ng-if="!$last || ctrl.movies.length > ctrl.movieLength"></md-divider>
                     </md-list-item>
                     <md-list-item class="md-3-line" ng-show="ctrl.movies.length > ctrl.movieLength"
-                                  ng-click="ctrl.movieMore()">
+                                  ng-click="ctrl.more()">
                         <md-icon><i>more</i></md-icon>
                         <div class="md-list-item-text" layout="column">
                             <h3>더보기</h3>
@@ -49,14 +52,14 @@
         </div>
     </div>
     <div class="collection" ng-if="root.user.movies.length>0">
-        <div layout="column" aria-label="{{movie.title}}" ng-repeat="movie in root.user.movies"
-             ng-click="ctrl.openCommentDialog(movie)"
+        <div layout="column" aria-label="{{movie.title}}" ng-repeat="movie in root.user.movies | limitTo : 5"
+             ng-click="movie.openCommentDialog()"
              class="summary">
             <img alt="{{movie.title}}" class="md-avatar" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"/>
             <div>
                 {{movie.title.removeTags()}}
             </div>
-            <div ng-click="ctrl.removeFromCollection(movie);$event.stopPropagation()">
+            <div ng-click="movie.removeFromCollection($event);">
                 <small class="grey">삭제</small>
             </div>
         </div>

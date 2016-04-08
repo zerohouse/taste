@@ -2,25 +2,26 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
-    <title>Taste Matching</title>
+    <title>Begin.at</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <!-- build:css(.) /styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
-    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
     <!-- include: "type": "css", "files": "**/*.css" -->
-    <link href="/pages/main/movie.css" rel="stylesheet" type="text/css">
+    <link href="/pages/movie/movie.css" rel="stylesheet" type="text/css">
     <link href="/service/commentDialog/commnetDialog.css" rel="stylesheet" type="text/css">
     <link href="/service/loginDialog/loginDialog.css" rel="stylesheet" type="text/css">
     <link href="/service/registerDialog/registerDialog.css" rel="stylesheet" type="text/css">
     <link href="/style/common.css" rel="stylesheet" type="text/css">
     <link href="/style/container.css" rel="stylesheet" type="text/css">
     <link href="/style/icon.css" rel="stylesheet" type="text/css">
+    <link href="/style/margin.css" rel="stylesheet" type="text/css">
     <link href="/style/reset.css" rel="stylesheet" type="text/css">
     <!-- /include -->
     <!-- endbuild -->
@@ -35,41 +36,71 @@
         }
     </style>
 </head>
-<body layout="row" ng-controller="rootController as root">
+<body ng-cloak layout="row" ng-controller="rootController as root">
 <md-sidenav
         md-component-id="nav"
         md-is-locked-open="$mdMedia('gt-md')"
         md-disable-backdrop
         md-whiteframe="4">
     <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        <h1 class="md-toolbar-tools">Begin.at 여기서.시작</h1>
     </md-toolbar>
-    <md-content layout-padding>
-        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-            Close Sidenav Left
-        </md-button>
-        <p hide-md show-gt-md>
-            <span ng-click="root.login();">로그인</span>
-            <span ng-click="root.register();">회원가입</span>
-        </p>
-    </md-content>
+    <md-list>
+        <md-list-item ng-click="root.go('movie')">
+            <md-icon><i>people</i></md-icon>
+            <p>오늘의 인연</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item ng-click="root.go('movie')">
+            <md-icon><i>movie</i></md-icon>
+            <p>영화</p>
+        </md-list-item>
+        <md-list-item ng-click="root.go('music')">
+            <md-icon><i>music_note</i></md-icon>
+            <p>음악</p>
+        </md-list-item>
+        <md-list-item ng-click="root.go('book')">
+            <md-icon><i>book_mark</i></md-icon>
+            <p>책</p>
+        </md-list-item>
+        <md-divider></md-divider>
+        <div ng-if="!root.user.id">
+            <md-list-item ng-click="root.login();">
+                <md-icon><i>person</i></md-icon>
+                <p>로그인</p>
+            </md-list-item>
+            <md-list-item ng-click="root.register();">
+                <md-icon><i>person_add</i></md-icon>
+                <p>회원가입</p>
+            </md-list-item>
+        </div>
+        <div ng-if="root.user.id">
+            <md-list-item ng-click="root.go('collection');">
+                <md-icon><i>person_add</i></md-icon>
+                <p>내 콜렉션</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ng-click="root.go('user')">
+                <md-icon><i>person</i></md-icon>
+                <p>내 정보</p>
+            </md-list-item>
+            <md-list-item ng-click="root.logout()">
+                <md-icon><i>person</i></md-icon>
+                <p>로그아웃</p>
+            </md-list-item>
+        </div>
+    </md-list>
 </md-sidenav>
 <div flex layout="column">
     <md-toolbar>
-        <div class="md-toolbar-tools">
+        <div class="md-toolbar-tools container">
             <md-button hide-gt-md ng-click="root.openSide()" class="md-icon-button" aria-label="Settings">
                 <md-icon><i>menu</i></md-icon>
             </md-button>
             <h2>
-                <span>Taste Pick</span>
+                <span>{{root.state.current.title}}</span>
             </h2>
             <span flex></span>
-            <md-button class="md-icon-button" aria-label="Favorite">
-                <md-icon><i class="material-icons">menu</i></md-icon>
-            </md-button>
-            <md-button class="md-icon-button" aria-label="More">
-                <md-icon><i class="material-icons">menu</i></md-icon>
-            </md-button>
         </div>
     </md-toolbar>
     <div ui-view flex layout="column"></div>
@@ -101,8 +132,15 @@
 <script src="/app.prototype.js"></script>
 <script src="/app.theming.js"></script>
 <script src="/config/ajax.handler.js"></script>
-<script src="/pages/main/main.ctrl.js"></script>
+<script src="/model/book.js"></script>
+<script src="/model/movie.js"></script>
+<script src="/model/music.js"></script>
+<script src="/pages/book/book.ctrl.js"></script>
+<script src="/pages/collection/collection.ctrl.js"></script>
+<script src="/pages/movie/movie.ctrl.js"></script>
+<script src="/pages/music/music.js"></script>
 <script src="/pages/root.ctrl.js"></script>
+<script src="/pages/user/user.ctrl.js"></script>
 <script src="/route/route.config.js"></script>
 <script src="/route/route.js"></script>
 <script src="/service/alert.js"></script>
