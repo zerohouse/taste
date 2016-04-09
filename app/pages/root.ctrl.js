@@ -16,7 +16,10 @@
 
         this.state = $state;
 
-        this.go = $state.go;
+        this.go = (state)=> {
+            $state.go(state);
+            $mdSidenav('nav').toggle();
+        };
 
         this.openNewTab = function (link, event) {
             event.stopPropagation();

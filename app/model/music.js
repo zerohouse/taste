@@ -5,6 +5,7 @@
 
         function Music(obj) {
             angular.copy(obj, this);
+            this.detail = this.description;
         }
 
 
@@ -29,10 +30,10 @@
                 alert("로그인이 필요한 서비스입니다.");
                 return;
             }
-            var finded = rootUser.musics.findById(this.id);
+            var finded = rootUser.contents.findById(this.id);
             if (!finded) {
                 $ajax.post('/api/v1/music', this, true).then(resonpose=> {
-                    rootUser.musics.push(resonpose.result);
+                    rootUser.contents.push(resonpose.result);
                     alert($hangul.get_With_이가(this.title.removeTags()) + " 콜렉션에 추가되었습니다.", document.querySelector(selector));
                 });
                 return;
@@ -47,11 +48,11 @@
                 alert("로그인이 필요한 서비스입니다.");
                 return;
             }
-            var finded = rootUser.musics.findById(this.id);
+            var finded = rootUser.contents.findById(this.id);
             if (finded) {
                 confirm($hangul.get_With_을를(finded.title.removeTags()) + " 콜렉션에서 제거합니다.").then(()=> {
                     $ajax.delete('/api/v1/music', {id: finded.id}).then(()=> {
-                        rootUser.musics.remove(finded);
+                        rootUser.contents.remove(finded);
                     });
                 });
             }

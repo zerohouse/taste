@@ -5,6 +5,17 @@
 
         function Book(obj) {
             angular.copy(obj, this);
+            var detail = "";
+            if (this.authors && this.authors[0])
+                detail += "<strong>작가</strong> " + this.authors.join(",");
+            if (this.publisher) {
+                if (this.authors && this.authors[0])
+                    detail += "<br>";
+                detail += "<strong>출판사</strong> " + this.publisher;
+            }
+            if (this.description)
+                detail += "<br>" + this.description.substr(0, 60) + "...";
+            this.detail = detail;
         }
 
         Book.prototype.addAndDetail = function (selector) {
@@ -12,10 +23,10 @@
                 alert("로그인이 필요한 서비스입니다.");
                 return;
             }
-            var finded = rootUser.books.findById(this.id);
+            var finded = rootUser.contents.findById(this.id);
             if (!finded) {
                 $ajax.post('/api/v1/book', this, true).then(resonpose=> {
-                    rootUser.books.push(new Book(resonpose.result));
+                    rootUser.contents.push(new Book(resonpose.result));
                     alert($hangul.get_With_이가(this.title.removeTags()) + " 콜렉션에 추가되었습니다.", document.querySelector(selector));
                 });
                 return;
@@ -30,11 +41,11 @@
                 alert("로그인이 필요한 서비스입니다.");
                 return;
             }
-            var finded = rootUser.books.findById(this.id);
+            var finded = rootUser.contents.findById(this.id);
             if (finded) {
                 confirm($hangul.get_With_을를(finded.title.removeTags()) + " 콜렉션에서 제거합니다.").then(()=> {
                     $ajax.delete('/api/v1/book', {id: finded.id}).then(()=> {
-                        rootUser.books.remove(finded);
+                        rootUser.contents.remove(finded);
                     });
                 });
             }
@@ -42,16 +53,9 @@
 
 
         Book.prototype.openCommentDialog = function () {
-            var detail = "";
-            if (this.authors && this.authors[0])
-                detail += "<strong>작가</strong> " + this.authors.join(",");
-            if (this.publisher)
-                detail += "<br><strong>출판사</strong> " + this.publisher;
-            if (this.description)
-                detail += "<br><small>" + this.description + "</small>";
             commentDialog(
                 this.title,
-                detail,
+                this.detail,
                 this.link,
                 this.comment
             ).then(comment=> {

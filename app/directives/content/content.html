@@ -1,0 +1,28 @@
+<div class="wrapper" ng-mouseenter="hover=true" ng-mouseleave="hover=false">
+    <div class="filter" ng-show="hover">
+        <div class="plus" ng-click="content.addAndDetail('.wrapper')">
+            <div ng-if="!user.contents.findById(content.id)">
+                <md-icon><i>add</i></md-icon>
+                <br>
+                컬렉션에 추가하기
+            </div>
+            <div ng-if="user.contents.findById(content.id)">
+                <md-icon><i>check</i></md-icon>
+                <br>
+                생각 남기기
+                <br>
+                <small ng-click="content.removeFromCollection($event);">삭제</small>
+            </div>
+        </div>
+    </div>
+    <div class="type" ng-if="!content.image">{{content.type}}</div>
+    <img ng-if="content.image" class="grid-img" ng-src="{{content.image}}">
+</div>
+<div class="title">
+    <div>{{content.title}}</div>
+    <div class="pubDate">{{content.pubDate}}</div>
+</div>
+<div class="description">
+    <div>{{content.subtitle}}</div>
+    <div ng-bind-html="content.detail"></div>
+</div>

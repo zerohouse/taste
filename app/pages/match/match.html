@@ -18,8 +18,7 @@
                 <img alt="{{ movie.title }}" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"
                      class="md-avatar"/>
                 <div class="md-list-item-text" layout="column">
-                    <h3><span class="hover-underline" ng-bind-html="movie.title"
-                              ng-click="root.openNewTab(movie.link, $event);"></span></h3>
+                    <h3><span class="hover-underline" ng-bind-html="movie.title"></span></h3>
                     <h4 ng-bind-html="movie.subtitle"></h4>
                     <p>
                         <span ng-if="movie.directors.length>0 && movie.directors[0]">

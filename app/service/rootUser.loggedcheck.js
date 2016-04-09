@@ -7,14 +7,15 @@
             if (!user) {
                 return;
             }
-            user.movies = user.movies.map(movie=> {
-                return new Movie(movie);
+            user.contents = [];
+            user.movies.forEach(movie=> {
+                user.contents.push(new Movie(movie));
             });
-            user.musics = user.musics.map(music=> {
-                return new Music(music);
+            user.musics.forEach(music=> {
+                user.contents.push(new Music(music));
             });
-            user.books = user.books.map(book=> {
-                return new Book(book);
+            user.books.forEach(book=> {
+                user.contents.push(new Book(book));
             });
             rootUser.setProperties(user);
         });

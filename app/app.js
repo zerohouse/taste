@@ -7,5 +7,6 @@ angular
         'anim-in-out',
         'ngMaterial',
         'ngSanitize',
-        'vcRecaptcha'
+        'vcRecaptcha',
+        'angularGrid'
     ]);

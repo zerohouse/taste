@@ -14,10 +14,12 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
     <!-- include: "type": "css", "files": "**/*.css" -->
+    <link href="/directives/content/content.css" rel="stylesheet" type="text/css">
     <link href="/pages/movie/movie.css" rel="stylesheet" type="text/css">
     <link href="/service/commentDialog/commnetDialog.css" rel="stylesheet" type="text/css">
     <link href="/service/loginDialog/loginDialog.css" rel="stylesheet" type="text/css">
     <link href="/service/registerDialog/registerDialog.css" rel="stylesheet" type="text/css">
+    <link href="/style/angular-grid-animate.css" rel="stylesheet" type="text/css">
     <link href="/style/common.css" rel="stylesheet" type="text/css">
     <link href="/style/container.css" rel="stylesheet" type="text/css">
     <link href="/style/icon.css" rel="stylesheet" type="text/css">
@@ -123,6 +125,7 @@
 <script src="/bower_components/angular-material/angular-material.js"></script>
 <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="/bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
+<script src="/bower_components/angulargrid/angulargrid.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -132,6 +135,8 @@
 <script src="/app.prototype.js"></script>
 <script src="/app.theming.js"></script>
 <script src="/config/ajax.handler.js"></script>
+<script src="/directives/content/content.directive.ctrl.js"></script>
+<script src="/directives/content/content.js"></script>
 <script src="/model/book.js"></script>
 <script src="/model/movie.js"></script>
 <script src="/model/music.js"></script>
