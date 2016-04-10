@@ -1,0 +1,393 @@
+{
+  "movies": [
+    {
+      "id": "91215",
+      "title": "트럼보",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=91215",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2Fb8a9976b8065e9505315836f435ce83251f6ad2f",
+      "subtitle": "Trumbo",
+      "pubDate": "2016.04.07",
+      "comment": null,
+      "directors": [
+        "제이 로치"
+      ],
+      "actors": [
+        "브라이언 크랜스턴",
+        "다이안 레인",
+        "헬렌 미렌",
+        "엘르 패닝",
+        "루이스 C.K",
+        "존 굿맨",
+        "딘 오고르만"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "97289",
+      "title": "하이-라이즈",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=97289",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F17196867d556e1061b4992cddfbb20ee8a4f8d57",
+      "subtitle": "High-Rise",
+      "pubDate": "2016.03.30",
+      "comment": null,
+      "directors": [
+        "벤 웨틀리"
+      ],
+      "actors": [
+        "톰 히들스톤",
+        "제레미 아이언스",
+        "시에나 밀러",
+        "루크 에반스",
+        "엘리자베스 모스",
+        "제임스 퓨어포이",
+        "킬리 호스"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "40355",
+      "title": "조제, 호랑이 그리고 물고기들",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=40355",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F6e7f70f0bbfaf9bc6d6cdc88a84b3fa1a66745af",
+      "subtitle": "Josee, the Tiger and the Fish",
+      "pubDate": "2004.10.29",
+      "comment": null,
+      "directors": [
+        "이누도 잇신"
+      ],
+      "actors": [
+        "츠마부키 사토시",
+        "이케와키 치즈루",
+        "우에노 주리",
+        "아라이 히로후미",
+        "신야 에이코",
+        "에구치 노리코",
+        "후지사와 다이고"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "3263",
+      "title": "스왈로우테일 버터플라이",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=3263",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F14110210A85650037CC203",
+      "subtitle": "Swallowtail butterfly",
+      "pubDate": "2005.06.23",
+      "comment": null,
+      "directors": [
+        "이와이 슌지"
+      ],
+      "actors": [
+        "미카미 히로시",
+        "이토 아유미",
+        "차라",
+        "모모이 카오리",
+        "후지이 카호리",
+        "와타베 아츠로",
+        "야마구치 토모코"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "31431",
+      "title": "릴리 슈슈의 모든 것",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=31431",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Fcfile89.uf.daum.net%2Fimage%2F13110210A90E2CF10BAA43",
+      "subtitle": "All About Lily Chou-Chou",
+      "pubDate": "2005.06.23",
+      "comment": null,
+      "directors": [
+        "이와이 슌지"
+      ],
+      "actors": [
+        "이치하라 하야토",
+        "오시나리 슈고",
+        "이토 아유미",
+        "아오이 유우",
+        "오사와 타카오",
+        "이나모리 이즈미",
+        "이치카와 미와코"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "1264",
+      "title": "인생은 아름다워",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=1264",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F8b5139e82e30ab43b6306713d7f26c01053ad875",
+      "subtitle": "Life Is Beautiful",
+      "pubDate": "1999.03.06",
+      "comment": null,
+      "directors": [
+        "로베르토 베니니"
+      ],
+      "actors": [
+        "로베르토 베니니",
+        "니콜레타 브라시",
+        "조르조 칸타리니",
+        "귀스티노 두라노",
+        "세르지오 비니 부스트릭",
+        "마리사 파레데스",
+        "호스트 부흐홀즈"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "91461",
+      "title": "리틀 보이",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=91461",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F35c7335ac8f224465ec9dedbb06f2164293b1ebb",
+      "subtitle": "Little Boy",
+      "pubDate": "2015.12.10",
+      "comment": null,
+      "directors": [
+        "알레한드로 몬테베르드"
+      ],
+      "actors": [
+        "제이콥 살바티",
+        "에밀리 왓슨",
+        "캐리-히로유키 타가와",
+        "마이클 라파포트",
+        "데이비드 헨리",
+        "톰 윌킨슨",
+        "케빈 제임스"
+      ],
+      "type": "MOVIE"
+    },
+    {
+      "id": "83493",
+      "title": "위플래쉬",
+      "link": "http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=83493",
+      "image": "http://t1.search.daumcdn.net/thumb/R438x0.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F85033f2c91b94f217b8e7bff0e4500ef49a97770",
+      "subtitle": "Whiplash",
+      "pubDate": "2015.03.12",
+      "comment": null,
+      "directors": [
+        "데미언 차젤"
+      ],
+      "actors": [
+        "마일즈 텔러",
+        "J.K. 시몬스",
+        "폴 라이저",
+        "멜리사 비노이스트",
+        "오스틴 스토웰",
+        "네이트 랭",
+        "크리스 멀키"
+      ],
+      "type": "MOVIE"
+    }
+  ],
+  "books": [
+    {
+      "id": "mJMRAQAAMAAJ",
+      "title": "하늘 과 바람 과 별 과 시",
+      "link": "http://books.google.co.kr/books?id=mJMRAQAAMAAJ&dq=%ED%95%98%EB%8A%98%EA%B3%BC+%EB%B0%94%EB%9E%8C%EA%B3%BC+%EB%B3%84%EA%B3%BC+%EC%8B%9C&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=mJMRAQAAMAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": null,
+      "pubDate": "1948",
+      "comment": null,
+      "authors": [
+        "윤동주",
+        "이남호"
+      ],
+      "publisher": null,
+      "type": "BOOK"
+    },
+    {
+      "id": "-yJvOs-dHRMC",
+      "title": "핑퐁",
+      "link": "http://books.google.co.kr/books?id=-yJvOs-dHRMC&dq=%ED%95%91%ED%90%81&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=-yJvOs-dHRMC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": null,
+      "pubDate": "2006",
+      "comment": null,
+      "authors": [
+        "박민규"
+      ],
+      "publisher": "창비",
+      "type": "BOOK"
+    },
+    {
+      "id": "EY2FAAAAQBAJ",
+      "title": "캐비닛",
+      "link": "http://books.google.co.kr/books?id=EY2FAAAAQBAJ&dq=%EC%BA%90%EB%B9%84%EB%8B%9B&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=EY2FAAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": "2006년 제12화 문학동네 소설상 수상작. 세상의 진실을 있는 그대로 고스란히 담아두는 '13호 캐비닛'을 무대로 펼쳐지는 이야기로, 탄탄한 필력과 구성진 입심으로 싱싱하고 리얼한 이야기를 들려준다. 3부로 구성된 각각의 파트는 독립적인 에피소드들이 상호연결되어 독특한 구성을 선보이고 있다. 작품의 화자는 178일 동안 캔맥주를 마셔대고 하릴없이 캐비닛 속 파일들을 정리하는 삼십대 직장인이다. 그의 낡은 캐비닛 안에는 온갖 기이하고 특이한 존재들이 가득하다. 손가락에서 은행나무가 자라는 사람에서부터 고양이가 되고자 하는 사람, 토포러, 심토머, 도플갱어, 샴쌍둥이 등 다양하고 무수한 판타지형 인물 군상들이 출현하고, 화자는 이들을 '심토머'라 부르며 그들의 기록을 정리한다. 소설은 심토머들의 기록과 이를 정리하는 화자의 이야기를 보여준다. 심사 당시 상상력의 기발함과 대담함이 돋보이며, 구성적 필연성을 갖고 정밀하게 잘 짜인 소설이라는 평을 받으며, 일곱 명 심사위원들의 만장일치로 뽑힌 작품이다.",
+      "pubDate": "2006-12-21",
+      "comment": null,
+      "authors": [
+        "김언수"
+      ],
+      "publisher": "문학동네",
+      "type": "BOOK"
+    },
+    {
+      "id": "7v1KAQAAIAAJ",
+      "title": "고래",
+      "link": "http://books.google.co.kr/books?id=7v1KAQAAIAAJ&dq=%EA%B3%A0%EB%9E%98&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=7v1KAQAAIAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": "제10회 문학동네소설상 수상자인 천명관의 '특별한' 장편소설. 신화적, 설화적 세계에 가까운 시·공간을 배경으로, 1부와 2부는 산골 소녀에서 소도시의 기업가로 성공하는 금복의 일대기를 중심으로 그녀를 둘러싼 갖가지 인물 사이에서 빚어지는 천태만상, 우여곡절을 숨가쁘게 그려냈으며, 3부는 감옥을 나온 뒤 폐허가 된 벽돌공장에 돌아온 금복의 딸이자 정신박약아인 춘희의 생존과 죽음에 이르는 과정을 담고 있다. 폭풍우처럼 격렬하고 파괴적인 인간의 '욕망'을 그린 천명관의 소설은 인물의 내면과 공간의 묘사를 배제한 채 시나리오 기법에 의존함으로써 빠른 속도로 읽힌다. 살인과 폭력, 죽음의 음산함, 전통설화의 세계, 질펀한 해학과 유장한 판소리를 연상케 하는 능청스럽고 능란한 입담, 신파극 변사를 떠올리게 하는 과장된 감정분출과 유치한 이죽거림, 무협지나 성인만화의 한 장면을 떠올리게 하는 대목 등 다양하고 다채로운 자양분들을 치밀한 구성으로 한 작품 속에 녹여내고 있다. 작가 자신, 우리의 지난 세기를 세상에 떠도는 얘기들로 채우고자 했다고 했지만, 그리고 이러저러한 잣대로 소설을 재단하는 것도 시도되고 있지만, 그보다는 우선 오랜만에 만나는 이야기의 성찬으로, 강력한 입심 앞에 선 독자가 느끼는 당연한 끌림에 순응해서 이 소설에 다가가는 것도 좋을 듯하다.",
+      "pubDate": "2004",
+      "comment": null,
+      "authors": [
+        "천명관"
+      ],
+      "publisher": null,
+      "type": "BOOK"
+    },
+    {
+      "id": "zPhKAQAAIAAJ",
+      "title": "카스테라",
+      "link": "http://books.google.co.kr/books?id=zPhKAQAAIAAJ&dq=%EC%B9%B4%EC%8A%A4%ED%85%8C%EB%9D%BC&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=zPhKAQAAIAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": "『지구영웅전설』, 『삼미 슈퍼스타즈의 마지막 팬클럽』을 선보이며 한국 문학계에 새로운 바람을 몰고 온 소설가 박민규의 첫 단편집. 전생에 훌리건이 아니었을까 의심스러운 냉장고 이야기, 링고 스타와 함께 버스를 타고 떠나는 우주여행 등 특유의 만화적 상상력이 넘실대는 단편 열 편이 실려있다. 2003년 여름부터 2005년 봄까지 각종 문예지에 발표한 글들로, 그야말로 유쾌한 글쓰기의 모범을 보여준다. 밑바닥 삶에 대한 애정, 자본주의 비판, B급 영화의 상상력, 이를 아우르는 스타일리시한 문체와 유머가 녹아있는 작품집으로, 대왕오징어, 거대한 개복치, 프로레슬러 헐크 호건, 팝스타 링고 스타 등 박민규의 소설이 아니면 만나기 힘든 등장인물들이 시종 웃음을 자아낸다.",
+      "pubDate": "2005",
+      "comment": null,
+      "authors": [
+        "박민규"
+      ],
+      "publisher": null,
+      "type": "BOOK"
+    },
+    {
+      "id": "Q2ZtCwAAQBAJ",
+      "title": "어린 왕자",
+      "link": "http://books.google.co.kr/books?id=Q2ZtCwAAQBAJ&dq=%EC%96%B4%EB%A6%B0%EC%99%95%EC%9E%90&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=Q2ZtCwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": "전 세계가 사랑하는 가장 아름다운 이야기, 생텍쥐페리의 『어린 왕자』가 문학 평론가 황현산 선생의 번역으로 열린책들에서 출간되었다. 프랑스어 원문에 대한 섬세한 이해, 정확하고도 아름다운 문장력, 예리한 문학적 통찰을 고루 갖춘 번역으로 문학 번역에서 큰 입지를 굳혀 온 황현산 선생은 이 작품을 새롭게 번역하면서 생텍쥐페리의 진솔한 문체를 고스란히 살려 내기 위해 심혈을 기울였다. 원문 텍스트 선택부터 번역의 마무리 작업까지, 국내에 출간된 많은 [어린 왕자] 중에서도 특히 원전의 가치를 충실히 살린 한국어 결정판을 마련하고자 했다. 다른 별에서 온 어린 왕자의 순수한 시선으로 모순된 어른들의 세계를 비추는 이 소설은, 꾸밈없는 진솔한 문체와 동화처럼 단순해 보이는 이야기 속에 삶을 돌아보는 깊은 성찰을 아름다운 은유로 녹여 낸 작품이다. [어린 왕자]를 다시 읽을 때마다 우리는 삶에서 가장 중요한 것들, 그러나 잊히거나 상실된 것들, [눈에 보이지 않는] 것들을 돌아보는 자리로 돌아오게 된다. 어린 시절 읽었던 이 작품을 보다 새롭고 완성도 높은 번역으로 다시 한 번 음미하며 읽어 볼 때다.",
+      "pubDate": "2014-10-20",
+      "comment": null,
+      "authors": [
+        "앙투안 드 생텍쥐페리"
+      ],
+      "publisher": null,
+      "type": "BOOK"
+    },
+    {
+      "id": "dIKhOwAACAAJ",
+      "title": "등대지기",
+      "link": "http://books.google.co.kr/books?id=dIKhOwAACAAJ&dq=%EB%93%B1%EB%8C%80%EC%A7%80%EA%B8%B0&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=dIKhOwAACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": null,
+      "pubDate": "2001",
+      "comment": null,
+      "authors": [
+        "조창인"
+      ],
+      "publisher": null,
+      "type": "BOOK"
+    },
+    {
+      "id": "a3RKAgAAQBAJ",
+      "title": "소크라테스의 변명",
+      "link": "http://books.google.co.kr/books?id=a3RKAgAAQBAJ&dq=%EC%86%8C%ED%81%AC%EB%9D%BC%ED%85%8C%EC%8A%A4%EC%9D%98+%EB%B3%80%EB%AA%85&hl=&source=gbs_api",
+      "image": "http://books.google.co.kr/books/content?id=a3RKAgAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+      "description": "지혜를 사랑한 위대한 사상가, 소크라테스 소크라테스의 유명한 격언인 ‘너 자신을 알라’는 고대 그리스 아폴론의 신전 기둥에 새겨져 있었다고 한다. 이 격언을 소크라테스가 철학적 활동에 쓰게 된 것은 자기의 무지를 앎으로써 시작하는 엄격한 반성이 철학적인 사유에 중요하다고 보았기 때문이다. 소크라테스는 무지에 대한 자각과 앎과 도덕의 일치를 주장하는 데 평생을 바쳤고 도덕적으로 결벽한 인물이었다. 이러한 소크라테스의 말들은 아테네 시민들에게 피로감을 주었다. 소크라테스는 어떤 논제든지 그냥 넘어 가는 법이 없었고 사람들을 찾아가 그의 무지를 폭로했다. 그를 따르는 젊은이가 많아지는 만큼 그를 미워하는 자들도 늘었다. 정치적인 이유까지 겹치면서 결국 법정에 서게 되었다. 그의 친구와 제자들은 아내와 어린 자식들을 내세워 동정표를 사라고 얘기도 하고 신념을 굽혀 목숨을 구하도록 청했다. 하지만 소크라테스는 이에 굴하지 않고 당당하게 변론했고 결국 사형을 선고받는다. 당시 아테네 법률에서는 유죄를 선고받으면 24시간 이내로 독배를 마셔야 했으나 델로스로 배를 보내는 행사 기간에는 형을 집행하지 않기 때문에 소크라테스의 사형은 미뤄졌다. 이 형이 집행되기까지 그가 외국으로 탈출할 기회는 여러 번 있었다. 하지만 소크라테스는 진리 앞에서는 신념을 굽히지 않아야 한다고 생각했다. 친한 친구 크리톤의 간청에도 잘못된 것은 법률이 아니라고 하며 악행에 악행으로 대하는 것은 옳지 않는다고 말한다. 그리하여 소크라테스는 최후까지 인간의 이성과 진리의 숭고함을 믿었으며 죽음으로 그의 신념을 완성한다. 지성을 일깨우는 소크라테스의 메시지 소크라테스는 일반적으로 생각하는 철학자들과는 길을 달리한다. 사색에 몰두하거나 저술 활동을 하는 것이 아니라 아테네 거리로 나가 그가 누구이든 가리지 않고 철학적 질문을 던지고 대화를 나누었다. 상대에게 질문을 하여 무지를 깨닫게 하고 진리를 알게 했다. 그의 대화법은 진리의 분만을 도와준다는 뜻에서 산파술이라고 말하기도 한다. 소크라테스는 지(知)와 덕(德)의 일치를 주장했고 덕을 실행하는 것은 인간으로서 완전함을 이루고 가족, 재산, 명예 등 사람들이 집착하는 그 어떤 것보다 위에 있어야 했다. 심지어 죽음도 그것을 막을 수 없고 그리하여 인간 영혼의 본질에 가까이 갈 수 있는 것이다. 소크라테스 이전에는 세계가 어떻게 구성되었는지 자연 철학에 대한 관심이 높았으나 소크라테스는 ‘어떻게 사는 것이 옳은가’라는 화두로 인간이 중심이 되는 철학적 과제에 몰두한다. 소크라테스는 상대를 비판하지 않고 상대방의 주장이 옳다는 가정 하에 논리를 전개했고 그 속에서 모순을 발견하는 변증법을 사용했다. 소크라테스의 변증법으로 대상에 대한 보편적 진리를 인식할 수 있는 길이 열렸고 이는 플라톤의 이데아론으로 계승되어 서양철학사의 골격을 이루는 특징이 되었다. 소크라테스의 가르침은 철학의 전통을 엿보게 하며 현대인들의 지성에 자극을 주고 잃어버린 가치를 묻게 하는 질문을 던질 것이다. [책 속 한 문장] 그러나 여러분, 죽음을 면하는 일보다 불의를 피하는 일이 어렵습니다. 불의는 죽음보다 빠르기 때문입니다. 지금 나는 늙고 걸음걸이가 더디어 한층 느린 죽음에 붙잡힌 것이며, 이와는 반대로 나를 고발한 사람들은 영리하고 민첩하여, 더욱 빠른 것, 즉 악에 잡히고 만 것입니다. 이제 나는 여러분의 사형 선고를 받고 이 자리를 떠나 죽음의 길로 가지만 여러분 역시 진리에 의해 유죄 선고를 받고 사악과 불의의 길을 갈 것입니다. 나는 판결에 복종하겠지만 여러분도 복종해야 합니다. 이것은 숙명적인 길로 나는 이렇게 되어도 좋다고 생각합니다. -「소크라테스의 변명」 소크라테스는 이리저리 걸어 다니다가 한참 후에 다리의 힘이 없어지기 시작한다고 하시면서 반듯하게 누우셨습니다. 간수의 말대로 한 것입니다. 간수는 가끔 소크라테스에게 다가가 발과 다리를 바라보았습니다. 그리고 한참 후 그의 팔을 세게 누르면서 감각이 있느냐고 물었습니다. 소크라테스는 감각이 없다고 대답하셨습니다. 그 다음에는 다리를 눌러보고 계속해서 위로 올라가면서 눌러 보고는 우리에게 점점 몸이 식어간다고 말했습니다. 그러고는 이것이 심장까지 퍼지게 되면 떠나는 것이라고 말하였습니다. -「파이돈」 소크라테스, 자네를 자라게 해 준 우리들의 말을 믿고 받아들이게. 저세상에 가서 자네가 보고 들었던 모든 사실을 그곳에 있는 통치자들에게 떳떳이 변명할 수 있도록 해야 하네. 자네의 목숨, 자식, 그 밖의 어떤 것도 정의보다 앞서는 것이 될 수 없네. 정의를 가장 먼저 존중하지 않는다면 자네는 자신에게는 물론 친척이나 어느 누구에게도 가장 훌륭하고 가장 옳고 가장 경건한 사람이 될 수 없을 걸세. 지금 자네가 이 세상을 떠난다면 그것은 우리 국법에 의해서가 아닌 인간들이 누명을 씌웠기 때문에 떠나는 걸세. 그러나 자네가 옳지 못한 방법으로 부정에 대한 앙갚음을 하고, 자네가 이제까지 동의하고 약속했던 것을 어기고, 자네의 친구들에게 피해를 주고 나라와 법률을 어지럽히고 떠난다면, 우리들의 노여움을 살 것이며 저세상에서도 그곳의 법률이 자네를 맞아들일 때 기뻐하지 않을 걸세. 그들 역시 자네가 우리의 뜻을 거역했음을 알고 있으니까 말일세. 우리가 아닌 크리톤의 설득에 휩쓸려 그 뜻을 따라서는 안 되네. -「크리톤」 그 다음에 여러 가지 지식을 얻을 수 있도록 지도해 나가며 지식의 아름다움을 찾고 그 아름다움을 깨달아 한 가지에만 집착하거나 얽매이는 노예가 되지 않도록 하며 한 가지 일에만 만족하여 구차하고 비열한 인간이 되지 않도록 노력해야 합니다. 오히려 아름다움이라는 큰 바다로 나아가 그 바다를 바라보면서 풍부하고 아름다운 관념과 사상을 창조해 아름다움에 관한 인식을 터득해야 합니다. 그러니 당신은 내 말에 주의해서 귀를 기울여 주십시오. -「향연」",
+      "pubDate": "2013-11-11",
+      "comment": null,
+      "authors": [
+        "플라톤"
+      ],
+      "publisher": "스마트북",
+      "type": "BOOK"
+    }
+  ],
+  "musics": [
+    {
+      "id": "SONG8112812",
+      "songId": "8112812",
+      "artistId": null,
+      "albumId": "2669211",
+      "link": "http://www.melon.com/song/detail.htm?songId=8112812",
+      "title": "every you",
+      "image": null,
+      "description": "루싸이트 토끼 - L+",
+      "type": "SONG",
+      "comment": null
+    },
+    {
+      "id": "ARTIST230490",
+      "songId": null,
+      "artistId": "230490",
+      "albumId": null,
+      "link": "http://www.melon.com/artist/timeline.htm?artistId=230490",
+      "title": "브로콜리너마저",
+      "image": null,
+      "description": "대한민국 혼성 그룹",
+      "type": "ARTIST",
+      "comment": null
+    },
+    {
+      "id": "SONG1283725",
+      "songId": "1283725",
+      "artistId": null,
+      "albumId": "321350",
+      "link": "http://www.melon.com/song/detail.htm?songId=1283725",
+      "title": "순이 우주로",
+      "image": null,
+      "description": "크라잉 넛 - OK 목장의 젖소",
+      "type": "SONG",
+      "comment": null
+    },
+    {
+      "id": "SONG5599131",
+      "songId": "5599131",
+      "artistId": null,
+      "albumId": "2305355",
+      "link": "http://www.melon.com/song/detail.htm?songId=5599131",
+      "title": "좀 더 서쪽으로",
+      "image": null,
+      "description": "중식이 - 좀 더 서쪽으로",
+      "type": "SONG",
+      "comment": null
+    },
+    {
+      "id": "SONG3920439",
+      "songId": "3920439",
+      "artistId": null,
+      "albumId": "2152066",
+      "link": "http://www.melon.com/song/detail.htm?songId=3920439",
+      "title": "헤어지는 날 바로 오늘",
+      "image": null,
+      "description": "3호선 버터플라이 - Dreamtalk",
+      "type": "SONG",
+      "comment": null
+    },
+    {
+      "id": "SONG2603449",
+      "songId": "2603449",
+      "artistId": null,
+      "albumId": "823251",
+      "link": "http://www.melon.com/song/detail.htm?songId=2603449",
+      "title": "스물 아홉 문득",
+      "image": null,
+      "description": "3호선 버터플라이 - Time Table (2010 Remastered Ver.)",
+      "type": "SONG",
+      "comment": null
+    },
+    {
+      "id": "SONG5656580",
+      "songId": "5656580",
+      "artistId": null,
+      "albumId": "2313121",
+      "link": "http://www.melon.com/song/detail.htm?songId=5656580",
+      "title": "Hollywood",
+      "image": null,
+      "description": "검정치마 - Hollywood",
+      "type": "SONG",
+      "comment": null
+    },
+    {
+      "id": "SONG8036156",
+      "songId": "8036156",
+      "artistId": null,
+      "albumId": "2664662",
+      "link": "http://www.melon.com/song/detail.htm?songId=8036156",
+      "title": "EVERYTHING",
+      "image": null,
+      "description": "검정치마 - EVERYTHING",
+      "type": "SONG",
+      "comment": null
+    }
+  ]
+}

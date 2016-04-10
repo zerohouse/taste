@@ -5,7 +5,7 @@
         </md-icon>
     </div>
     <div layout="column" aria-label="{{movie.title}}"
-         ng-repeat="content in contents | orderBy : 'updateAt' | limitTo : 5 : offset"
+         ng-repeat="content in contents | orderBy : '-updateAt' | limitTo : 5 : offset"
          ng-click="content.openCommentDialog()"
          class="summary">
         <img ng-if="content.type === 'MOVIE' || content.type === 'BOOK'" alt="{{content.title}}" class="md-avatar"
@@ -20,7 +20,7 @@
             <small class="grey">삭제</small>
         </div>
     </div>
-    <div class="arrow" ng-click="right()" ng-hide="offset===contents.length-6">
+    <div class="arrow" ng-click="right()" ng-show="contents.length > 5 && offset < contents.length-5">
         <md-icon>
             <i>chevron_right</i>
         </md-icon>

@@ -1,23 +1,17 @@
 (function () {
     angular.module('app').controller('musicCtrl', musicCtrl);
     /* @ng-inject */
-    function musicCtrl($ajax, $scope, $timeout, Music) {
+    function musicCtrl($ajax, $scope, $timeout, Music, Defaults) {
         var ajax, self = this;
         this.keyword = '';
-
-        var defaults;
-        $ajax.get('/resources/data/musics.json').then(musics=> {
-            defaults = this.musics = musics.map(music=> {
-                return new Music(music);
-            });
-        });
-
+        this.musics = Defaults.musics;
+        
         $scope.$watch(()=> {
             return this.keyword;
         }, keyword=> {
             $timeout.cancel(ajax);
             if (!keyword) {
-                self.musics = defaults;
+                self.musics = Defaults.musics;
                 return;
             }
             ajax = $timeout(function () {

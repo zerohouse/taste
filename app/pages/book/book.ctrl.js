@@ -1,23 +1,17 @@
 (function () {
     angular.module('app').controller('bookCtrl', bookCtrl);
     /* @ng-inject */
-    function bookCtrl($ajax, $scope, $timeout, Book) {
+    function bookCtrl($ajax, $scope, $timeout, Book, Defaults) {
         var ajax, self = this;
         this.keyword = '';
-
-        var defaults;
-        $ajax.get('/resources/data/books.json').then(books=> {
-            defaults = this.books = books.map(book=> {
-                return new Book(book);
-            });
-        });
+        this.books = Defaults.books;
 
         $scope.$watch(()=> {
             return this.keyword;
         }, keyword=> {
             $timeout.cancel(ajax);
             if (!keyword) {
-                self.books = defaults;
+                self.books = Defaults.books;
                 return;
             }
             ajax = $timeout(function () {

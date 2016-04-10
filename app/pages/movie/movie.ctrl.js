@@ -1,23 +1,17 @@
 (function () {
     angular.module('app').controller('movieCtrl', movieCtrl);
     /* @ng-inject */
-    function movieCtrl($ajax, $scope, $timeout, Movie) {
+    function movieCtrl($ajax, $scope, $timeout, Movie, Defaults) {
         var ajax, self = this;
         this.keyword = '';
-
-        var defaults;
-        $ajax.get('/resources/data/movies.json').then(movies=> {
-            defaults = this.movies = movies.map(movie=> {
-                return new Movie(movie);
-            });
-        });
+        this.movies = Defaults.movies;
 
         $scope.$watch(()=> {
             return this.keyword;
         }, keyword=> {
             $timeout.cancel(ajax);
             if (!keyword) {
-                this.movies = defaults;
+                self.movies = Defaults.movies;
                 return;
             }
             ajax = $timeout(function () {
