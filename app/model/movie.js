@@ -19,6 +19,8 @@
                 detail += "<strong>출연</strong> " + actors.splice(0,5).join(", ");
             }
             this.detail = detail;
+            this.createAt = new Date(obj.createAt);
+            this.updateAt = new Date(obj.updateAt);
         }
 
         Movie.prototype.openCommentDialog = function () {

@@ -15,17 +15,5 @@
             </div>
         </div>
     </div>
-    <div class="collection" ng-if="root.user.contents.length>0">
-        <div layout="column" aria-label="{{book.title}}" ng-repeat="book in root.user.contents | limitTo : 5"
-             ng-click="book.openCommentDialog()"
-             class="summary">
-            <img alt="{{book.title}}" class="md-avatar" ng-src="{{ book.image || '/resources/icons/book.png' }}"/>
-            <div>
-                {{book.title.removeTags()}}
-            </div>
-            <div ng-click="book.removeFromCollection($event);">
-                <small class="grey">삭제</small>
-            </div>
-        </div>
-    </div>
+    <collections contents="root.user.contents"></collections>
 </div>

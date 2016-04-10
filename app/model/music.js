@@ -6,8 +6,9 @@
         function Music(obj) {
             angular.copy(obj, this);
             this.detail = this.description;
+            this.createAt = new Date(obj.createAt);
+            this.updateAt = new Date(obj.updateAt);
         }
-
 
         Music.prototype.openCommentDialog = function () {
             commentDialog(
@@ -57,7 +58,6 @@
                 });
             }
         };
-
 
         return Music;
     }

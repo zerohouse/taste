@@ -10,47 +10,10 @@
         <div flex class="overlay">
             <div class="container">
                 <div angular-grid="ctrl.musics" ag-grid-width="200" ag-id="movies" class="dynamic-grid">
-                    <movie movie="movie" ng-repeat="movie in ctrl.musics"></movie>
+                    <content content="music" ng-repeat="music in ctrl.musics"></content>
                 </div>
-                <md-list flex ng-cloak>
-                    <md-list-item class="md-3-line" ng-click="music.addAndDetail('.wrapper')"
-                                  ng-repeat="music in ctrl.musics"
-                                  aria-label="{{music.title}}">
-                        <div class="margin-right">
-                            <i>{{music.type}}</i>
-                        </div>
-                        <div class="md-list-item-text" layout="column">
-                            <h3><span class="hover-underline" ng-bind-html="music.title"></span>
-                            </h3>
-                            <h4 ng-bind-html="music.description"></h4>
-                        </div>
-                        <md-icon ng-if="!root.user.musics.findById(music.id)">
-                            <i>add</i>
-                        </md-icon>
-                        <div class="green" ng-if="root.user.musics.findById(music.id)"
-                             ng-click="music.removeFromCollection($event);">
-                            <md-icon><i>check</i></md-icon>
-                            추가됨
-                        </div>
-                        <md-divider ng-if="!$last"></md-divider>
-                    </md-list-item>
-                </md-list>
             </div>
         </div>
     </div>
-    <div class="collection" ng-if="root.user.contents.length>0">
-        <div layout="column" aria-label="{{music.title}}" ng-repeat="music in root.user.contents | limitTo : 5"
-             ng-click="ctrl.openCommentDialog(music)"
-             class="summary">
-            <img alt="{{music.title}}" class="md-avatar" ng-if="music.type==='ARTIST'" src="/resources/icons/artist.jpg"/>
-            <img alt="{{music.title}}" class="md-avatar" ng-if="music.type==='SONG'" src="/resources/icons/song.png"/>
-            <img alt="{{music.title}}" class="md-avatar" ng-if="music.type==='ALBUM'" src="/resources/icons/album.jpg"/>
-            <div>
-                {{music.title.removeTags()}}
-            </div>
-            <div ng-click="music.removeFromCollection($event);">
-                <small class="grey">삭제</small>
-            </div>
-        </div>
-    </div>
+    <collections contents="root.user.contents"></collections>
 </div>

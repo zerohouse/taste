@@ -7,15 +7,17 @@
             if (!user) {
                 return;
             }
-            user.contents = [];
-            user.movies.forEach(movie=> {
-                user.contents.push(new Movie(movie));
-            });
-            user.musics.forEach(music=> {
-                user.contents.push(new Music(music));
-            });
-            user.books.forEach(book=> {
-                user.contents.push(new Book(book));
+            user.contents = user.contents.map(content=> {
+                if (content.type === "SONG")
+                    return new Music(content);
+                if (content.type === "ALBUM")
+                    return new Music(content);
+                if (content.type === "ARTIST")
+                    return new Music(content);
+                if (content.type === "BOOK")
+                    return new Book(content);
+                if (content.type === "MOVIE")
+                    return new Movie(content);
             });
             rootUser.setProperties(user);
         });

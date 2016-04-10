@@ -15,6 +15,8 @@
             }
             if (this.description)
                 detail += "<br>" + this.description.substr(0, 60) + "...";
+            this.createAt = new Date(obj.createAt);
+            this.updateAt = new Date(obj.updateAt);
             this.detail = detail;
         }
 

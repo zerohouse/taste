@@ -5,8 +5,8 @@
             <md-icon><i>search</i></md-icon>
             <input ng-model="ctrl.keyword">
         </md-input-container>
-        <div angular-grid="root.user.contents" ag-grid-width="200" ag-id="movies" class="dynamic-grid">
-            <content content="content" ng-repeat="content in root.user.contents"></content>
+        <div angular-grid="ctrl.contents" ag-grid-width="200" ag-id="movies" class="dynamic-grid">
+            <content content="content" ng-repeat="content in ctrl.contents"></content>
         </div>
     </div>
 </div>
