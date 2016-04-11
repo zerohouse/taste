@@ -42,8 +42,8 @@
             var finded = rootUser.contents.findById(this.id);
             if (!finded) {
                 $ajax.post('/api/v1/music', this, true).then(resonpose=> {
-                    this.updateAt = resonpose.result.updateAt;
-                    this.createAt = resonpose.result.createAt;
+                    this.updateAt = new Date(resonpose.result.updateAt);
+                    this.createAt = new Date(resonpose.result.createAt);
                     rootUser.contents.push(this);
                     alert($hangul.get_With_이가(this.title.removeTags()) + " 콜렉션에 추가되었습니다.", document.querySelector(selector));
                 });

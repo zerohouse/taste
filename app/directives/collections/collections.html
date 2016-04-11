@@ -1,26 +1,12 @@
 <div ng-if="contents.length>0" layout="row" layout-align="center center">
-    <div class="arrow" ng-click="left()" ng-hide="offset===0">
+    <div class="arrow left" ng-click="left()" ng-hide="offset===0">
         <md-icon>
             <i>chevron_left</i>
         </md-icon>
     </div>
-    <div layout="column" aria-label="{{movie.title}}"
-         ng-repeat="content in contents | orderBy : '-updateAt' | limitTo : 5 : offset"
-         ng-click="content.openCommentDialog()"
-         class="summary">
-        <img ng-if="content.type === 'MOVIE' || content.type === 'BOOK'" alt="{{content.title}}" class="md-avatar"
-             ng-src="{{ content.image || '/resources/icons/movie.png' }}"/>
-        <img alt="{{music.title}}" class="md-avatar" ng-if="content.type==='ARTIST'" src="/resources/icons/artist.jpg"/>
-        <img alt="{{music.title}}" class="md-avatar" ng-if="content.type==='SONG'" src="/resources/icons/song.png"/>
-        <img alt="{{music.title}}" class="md-avatar" ng-if="content.type==='ALBUM'" src="/resources/icons/album.jpg"/>
-        <div>
-            {{content.title}}
-        </div>
-        <div ng-click="content.removeFromCollection($event);">
-            <small class="grey">삭제</small>
-        </div>
-    </div>
-    <div class="arrow" ng-click="right()" ng-show="contents.length > 5 && offset < contents.length-5">
+    <content-summary content="content" ng-repeat="content in contents | orderBy : '-updateAt' | limitTo : 5 : offset">
+    </content-summary>
+    <div class="arrow right" ng-click="right()" ng-show="contents.length > 5 && offset < contents.length-5">
         <md-icon>
             <i>chevron_right</i>
         </md-icon>

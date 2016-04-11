@@ -8,5 +8,6 @@ angular
         'ngMaterial',
         'ngSanitize',
         'vcRecaptcha',
-        'angularGrid'
+        'angularGrid',
+        'ngFileUpload'
     ]);

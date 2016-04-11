@@ -23,9 +23,9 @@
         </md-input-container>
         <md-input-container class="md-block movie-search">
             <label>나이</label>
-            <input ng-model="user.age">
+            <input number-only ng-model="user.age">
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="margin-bottom">
             <label>성별</label>
             <md-select ng-model="user.gender">
                 <md-option value="male">
@@ -36,7 +36,7 @@
                 </md-option>
             </md-select>
         </md-input-container>
-        <md-input-container class="margin-top">
+        <md-input-container>
             <label>지역</label>
             <md-select ng-model="user.district">
                 <md-option value="seoul">

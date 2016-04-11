@@ -9,11 +9,11 @@
             </md-button>
         </div>
     </md-toolbar>
-    <md-dialog-content class="md-dialog-content">
+    <md-dialog-content style="padding-bottom:0" class="md-dialog-content">
         <div class="detail">
             <div ng-bind-html="detail.description"></div>
         </div>
-        <md-input-container class="md-prompt-input-container">
+        <md-input-container class="md-prompt-input-container non-margin-bottom">
             <label>생각</label>
             <textarea ng-model="detail.comment"></textarea>
         </md-input-container>

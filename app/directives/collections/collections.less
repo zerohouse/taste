@@ -1,31 +1,36 @@
 collections {
   display: block;
   min-height: 124px;
-  background: #f4f4f4;
+  background: white;
   text-align: center;
+  position: relative;
   white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: auto;
+  overflow: hidden;
   width: 100%;
   .arrow {
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50px;
     md-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      -moz-transform: translateY(-50%) translateX(-50%);
+      -webkit-transform: translateY(-50%) translateX(-50%);
+      height: 48px;
+      width: 48px;
+      i {
+        font-size: 48px;
+      }
     }
   }
-  .summary {
-    width: 100px;
-    margin: 15px 8px;
-    text-align: center;
-    img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      margin: auto;
-      margin-bottom: 8px;
-    }
-    div {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 12px;
-    }
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
   }
 }

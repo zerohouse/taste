@@ -1,0 +1,13 @@
+<div layout="column" ng-click="content.openCommentDialog()">
+    <img ng-if="content.type === 'MOVIE' || content.type === 'BOOK'" alt="{{content.title}}" class="md-avatar"
+         ng-src="{{ content.image || '/resources/icons/movie.png' }}"/>
+    <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='ARTIST'" src="/resources/icons/artist.jpg"/>
+    <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='SONG'" src="/resources/icons/song.png"/>
+    <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='ALBUM'" src="/resources/icons/album.jpg"/>
+    <div>
+        {{content.title}}
+    </div>
+    <div ng-click="content.removeFromCollection($event);">
+        <small class="grey">삭제</small>
+    </div>
+</div>
