@@ -9,11 +9,11 @@
         </div>
         <div flex class="overlay">
             <div class="container">
-                <div angular-grid="ctrl.musics" ag-grid-width="200" ag-id="movies" class="dynamic-grid">
-                    <content content="music" ng-repeat="music in ctrl.musics"></content>
+                <div angular-grid="ctrl.contents" ag-grid-width="200" class="dynamic-grid">
+                    <content content="content" ng-repeat="content in ctrl.contents"></content>
                 </div>
             </div>
         </div>
     </div>
-    <collections contents="root.user.contents"></collections>
+    <collections ng-if="root.user.contents.length>0" contents="root.user.contents"></collections>
 </div>

@@ -18,6 +18,14 @@
             this.createAt = new Date(obj.createAt);
             this.updateAt = new Date(obj.updateAt);
             this.detail = detail;
+
+            if (this.comment)
+                return;
+            if (!rootUser.contents)
+                return;
+            var finded = rootUser.contents.findById(obj.id);
+            if (finded)
+                this.comment = finded.comment;
         }
 
         Book.prototype.addAndDetail = function (selector) {
@@ -28,7 +36,9 @@
             var finded = rootUser.contents.findById(this.id);
             if (!finded) {
                 $ajax.post('/api/v1/book', this, true).then(resonpose=> {
-                    rootUser.contents.push(new Book(resonpose.result));
+                    this.updateAt = resonpose.result.updateAt;
+                    this.createAt = resonpose.result.createAt;
+                    rootUser.contents.push(this);
                     alert($hangul.get_With_이가(this.title.removeTags()) + " 콜렉션에 추가되었습니다.", document.querySelector(selector));
                 });
                 return;

@@ -13,24 +13,24 @@ angular.module('app')
             .state("movie", {
                 name: "movie",
                 url: "/movie",
-                templateUrl: '/pages/movie/movie.html',
-                controller: 'movieCtrl',
+                templateUrl: '/pages/search/search.html',
+                controller: 'searchCtrl',
                 controllerAs: 'ctrl',
                 title: "영화"
             })
             .state("book", {
                 name: "book",
                 url: "/book",
-                templateUrl: '/pages/book/book.html',
-                controller: 'bookCtrl',
+                templateUrl: '/pages/search/search.html',
+                controller: 'searchCtrl',
                 controllerAs: 'ctrl',
                 title: "책"
             })
             .state("music", {
                 name: "music",
                 url: "/music",
-                templateUrl: '/pages/music/music.html',
-                controller: 'musicCtrl',
+                templateUrl: '/pages/search/search.html',
+                controller: 'searchCtrl',
                 controllerAs: 'ctrl',
                 title: "음악"
             })

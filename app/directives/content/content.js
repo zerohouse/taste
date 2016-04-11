@@ -7,7 +7,8 @@
             templateUrl: '/directives/content/content.html',
             controller: 'contentDirectiveCtrl',
             scope: {
-                content: '='
+                content: '=',
+                collection: '='
             }
         };
     }

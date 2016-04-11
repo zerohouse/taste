@@ -1,44 +1,42 @@
 <div flex class="overlay">
-    <div class="container">
-        <div>
-            이름 {{root.user.name}}
-        </div>
-        <div>
-            나이 {{root.user.name}}
-        </div>
-        <div>
-            지역 {{root.user.name}}
-        </div>
+    <div>
+        <div class="container">
+            <div>
+                이름 {{root.user.name}}
+            </div>
+            <div>
+                나이 {{root.user.name}}
+            </div>
+            <div>
+                지역 {{root.user.name}}
+            </div>
 
-        <md-list>
-            <md-subheader>함께 좋아하는 것들</md-subheader>
-            <md-list-item class="md-3-line" ng-click="movie.addAndDetail('.wrapper')"
-                          ng-repeat="movie in root.user.movies | limitTo:3"
-                          aria-label="{{movie.title}}">
-                <img alt="{{ movie.title }}" ng-src="{{ movie.image || '/resources/icons/movie.png' }}"
-                     class="md-avatar"/>
-                <div class="md-list-item-text" layout="column">
-                    <h3><span class="hover-underline" ng-bind-html="movie.title"></span></h3>
-                    <h4 ng-bind-html="movie.subtitle"></h4>
-                    <p>
-                        <span ng-if="movie.directors.length>0 && movie.directors[0]">
-                        <strong>감독</strong>
-                            <span ng-repeat="director in movie.directors | limitTo : 3">{{director}}<span
-                                    ng-if="!$last">,</span> </span>
-                        </span>
-                        <span ng-if="movie.actors.length>0 && movie.actors[0]"><strong>출연진</strong> <span
-                                ng-repeat="actor in movie.actors | limitTo : 3">{{actor}}<span ng-if="!$last">,</span> </span>
-                        </span>
-                    </p>
-                </div>
-                <md-icon ng-if="!root.user.movies.findById(movie.id)">
-                    <i>add</i>
-                </md-icon>
-                <div class="green" ng-if="root.user.movies.findById(movie.id)"
-                     ng-click="movie.removeFromCollection($event);">
-                    <md-icon><i>check</i></md-icon>
-                </div>
-            </md-list-item>
-        </md-list>
+        </div>
+    </div>
+    <div class="container">
+        <md-content>
+            <md-tabs md-dynamic-height md-border-bottom>
+                <md-tab label="one">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">Tab One</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                    </md-content>
+                </md-tab>
+                <md-tab label="two">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">Tab Two</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    </md-content>
+                </md-tab>
+                <md-tab label="three">
+                    <md-content class="md-padding">
+                        <h1 class="md-display-2">Tab Three</h1>
+                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
     </div>
 </div>

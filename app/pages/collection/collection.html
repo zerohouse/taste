@@ -6,7 +6,8 @@
             <input ng-model="ctrl.keyword">
         </md-input-container>
         <div angular-grid="ctrl.contents" ag-grid-width="200" ag-id="movies" class="dynamic-grid">
-            <content content="content" ng-repeat="content in ctrl.contents"></content>
+            <content collection="true" content="content"
+                     ng-repeat="content in ctrl.contents | orderBy:'-updateAt'"></content>
         </div>
     </div>
 </div>
