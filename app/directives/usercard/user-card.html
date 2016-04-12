@@ -1,0 +1,28 @@
+<div class="header">
+    <div class="profile" ng-style="{'background-image':'url('+user.photo+')'}">
+    </div>
+    <div class="info">
+        <div>{{user.name}}</div>
+        <small>{{user.age}}, {{user.gender}}, {{user.district}}, {{user.introduce}}</small>
+    </div>
+</div>
+<div class="body">
+    <md-list flex>
+        <md-list-item class="md-3-line" ng-click="null" ng-repeat="content in contents | limitTo : 3">
+            <img ng-if="content.type === 'MOVIE' || content.type === 'BOOK'" alt="{{content.title}}" class="md-avatar"
+                 ng-src="{{ content.image || '/resources/icons/movie.png' }}"/>
+            <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='ARTIST'"
+                 src="/resources/icons/artist.jpg"/>
+            <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='SONG'"
+                 src="/resources/icons/song.png"/>
+            <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='ALBUM'"
+                 src="/resources/icons/album.jpg"/>
+            <div class="md-list-item-text" layout="column">
+                <h3>{{ content.title }}</h3>
+                <h4 ng-bind-html="content.detail"></h4>
+                <p>{{ content.comment }}</p>
+            </div>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list-item>
+    </md-list>
+</div>

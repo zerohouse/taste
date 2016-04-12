@@ -42,6 +42,14 @@ angular.module('app')
                 controllerAs: 'ctrl',
                 title: "내 정보"
             })
+            .state("message", {
+                name: "message",
+                url: "/message",
+                templateUrl: '/pages/message/message.html',
+                controller: 'msgCtrl',
+                controllerAs: 'ctrl',
+                title: "대화"
+            })
             .state("match", {
                 name: "match",
                 url: "/match",

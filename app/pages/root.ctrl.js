@@ -1,7 +1,7 @@
 (function () {
     angular.module('app').controller('rootController', rootController);
     /* @ng-inject */
-    function rootController(rootUser, $mdSidenav, loginDialog, registerDialog, $state, $window, $ajax) {
+    function rootController(rootUser, $mdSidenav, loginDialog, registerDialog, $state, $window, $ajax, confirm) {
         this.user = rootUser;
         this.openSide = ()=> {
             $mdSidenav('nav').toggle();
@@ -22,13 +22,16 @@
         };
 
         this.openNewTab = function (link, event) {
-            event.stopPropagation();
             $window.open(link, '_blank');
+            if (event)
+                event.stopPropagation();
         };
 
         this.logout = function () {
-            $ajax.post('/api/v1/user/logout').then(function () {
-                rootUser.logout();
+            confirm("로그아웃 하시겠습니까?").then(()=> {
+                $ajax.post('/api/v1/user/logout').then(function () {
+                    rootUser.logout();
+                });
             });
         };
     }

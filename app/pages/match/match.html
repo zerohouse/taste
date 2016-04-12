@@ -1,16 +1,5 @@
 <div flex class="overlay">
     <div class="container" layout="column">
-        <div class="user-card">
-            <div class="header">
-                <img class="profile" src="/resources/icons/album.jpg">
-                <div class="info">
-                    <div>박성호</div>
-                    <small>28, 남, 서울, 프로그래머</small>
-                </div>
-            </div>
-            <div class="body">
-                <collections ng-if="root.user.contents.length>0" contents="root.user.contents"></collections>
-            </div>
-        </div>
+        <user-card contents="root.user.contents" user="root.user"></user-card>
     </div>
 </div>

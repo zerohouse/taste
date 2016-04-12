@@ -1,46 +1,56 @@
-<div class="profile-header" layout="row" layout-align="center center">
-    <div class="profile">
-        <img ngf-drop="ctrl.uploadFile($file)" ngf-select="ctrl.uploadFile($file)"  ngf-drag-over-class="'dragover'" ngf-pattern="'image/*'"
-             ng-src="{{root.user.photo||'/resources/icons/album.jpg'}}">
-    </div>
-</div>
-<div class="container">
-    <div layout="column">
-        <md-input-container class="non-margin-bottom" flex>
-            <label>이름</label>
-            <input ng-model="root.user.name">
-        </md-input-container>
-        <md-input-container class="non-margin-bottom" flex>
-            <label>나이</label>
-            <input type="number" ng-model="root.user.age">
-        </md-input-container>
-        <md-input-container flex>
-            <label>성별</label>
-            <md-select ng-model="root.user.gender">
-                <md-option value="male">
-                    남
-                </md-option>
-                <md-option value="female">
-                    여
-                </md-option>
-            </md-select>
-        </md-input-container>
-        <md-input-container flex>
-            <label>지역</label>
-            <md-select ng-model="root.user.district">
-                <md-option value="seoul">
-                    서울
-                </md-option>
-                <md-option value="gyungi">
-                    경기
-                </md-option>
-                <md-option value="other">
-                    기타
-                </md-option>
-            </md-select>
-        </md-input-container>
-        <md-button ng-click="ctrl.update(root.user)" class="md-raised md-block">
-            저장하기
-        </md-button>
+<div class="overlay">
+    <div class="container">
+        <md-button class="md-raised" ng-click="showCard = !showCard">카드 <span ng-show="!showCard">보이기</span><span ng-show="showCard">숨기기</span></md-button>
+        <user-card ng-show="showCard" user="root.user" contents="root.user.contents"></user-card>
+        <div class="profile-header" layout="row" layout-align="center center">
+            <div class="profile">
+                <img ngf-drop="ctrl.uploadFile($file)" ngf-select="ctrl.uploadFile($file)"
+                     ngf-drag-over-class="'dragover'"
+                     ngf-pattern="'image/*'"
+                     ng-src="{{root.user.photo||'/resources/icons/album.jpg'}}">
+            </div>
+        </div>
+        <div layout="column">
+            <md-input-container class="non-margin-bottom" flex>
+                <label>이름</label>
+                <input ng-model="root.user.name">
+            </md-input-container>
+            <md-input-container class="non-margin-bottom" flex>
+                <label>나이</label>
+                <input number-only ng-model="root.user.age">
+            </md-input-container>
+            <md-input-container class="non-margin-bottom" flex>
+                <label>소개말</label>
+                <input type="text" ng-model="root.user.introduce">
+            </md-input-container>
+            <md-input-container flex>
+                <label>성별</label>
+                <md-select ng-model="root.user.gender">
+                    <md-option value="남">
+                        남
+                    </md-option>
+                    <md-option value="여">
+                        여
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container flex>
+                <label>지역</label>
+                <md-select ng-model="root.user.district">
+                    <md-option value="서울">
+                        서울
+                    </md-option>
+                    <md-option value="경기">
+                        경기
+                    </md-option>
+                    <md-option value="기타">
+                        기타
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-button ng-click="ctrl.update(root.user)" class="md-raised md-block">
+                저장하기
+            </md-button>
+        </div>
     </div>
 </div>

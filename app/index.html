@@ -17,7 +17,7 @@
     <link href="/directives/collections/collections.css" rel="stylesheet" type="text/css">
     <link href="/directives/content-summary/content-summary.css" rel="stylesheet" type="text/css">
     <link href="/directives/content/content.css" rel="stylesheet" type="text/css">
-    <link href="/pages/match/user-card.css" rel="stylesheet" type="text/css">
+    <link href="/directives/usercard/user-card.css" rel="stylesheet" type="text/css">
     <link href="/pages/user/user.css" rel="stylesheet" type="text/css">
     <link href="/service/commentDialog/commnetDialog.css" rel="stylesheet" type="text/css">
     <link href="/service/loginDialog/loginDialog.css" rel="stylesheet" type="text/css">
@@ -54,6 +54,10 @@
         <md-list-item ng-click="root.go('match')">
             <md-icon><i>people</i></md-icon>
             <p>비슷한 취향의 사람</p>
+        </md-list-item>
+        <md-list-item ng-click="root.go('message')">
+            <md-icon><i>person</i></md-icon>
+            <p>대화</p>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item ng-click="root.go('movie')">
@@ -106,6 +110,9 @@
                 <span>{{root.state.current.title}}</span>
             </h2>
             <span flex></span>
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon><i>notifications</i></md-icon>
+            </md-button>
         </div>
     </md-toolbar>
     <div ui-view flex layout="column"></div>
@@ -143,6 +150,7 @@
 <script src="/directives/content-summary/content-summary.js"></script>
 <script src="/directives/content/content.directive.ctrl.js"></script>
 <script src="/directives/content/content.js"></script>
+<script src="/directives/usercard/user-card.js"></script>
 <script src="/model/book.js"></script>
 <script src="/model/content.factory.js"></script>
 <script src="/model/movie.js"></script>
@@ -150,6 +158,7 @@
 <script src="/pages/collection/collection.ctrl.js"></script>
 <script src="/pages/main/main.ctrl.js"></script>
 <script src="/pages/match/match.ctrl.js"></script>
+<script src="/pages/message/msg.ctrl.js"></script>
 <script src="/pages/root.ctrl.js"></script>
 <script src="/pages/search/search.ctrl.js"></script>
 <script src="/pages/user/user.ctrl.js"></script>
