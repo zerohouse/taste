@@ -24,6 +24,25 @@
         this.search = function (type, query) {
             return $q(function (resolve) {
                 $ajax.get('/api/v1/search/' + type, {query: query}).then(response=> {
+                    if (!response.result) {
+                        resolve([]);
+                        return;
+                    }
+                    var results = response.result.map(content=> {
+                        return self.getNew(content);
+                    });
+                    resolve(results);
+                });
+            });
+        };
+
+        this.searchMovieText = function (query) {
+            return $q(function (resolve) {
+                $ajax.get('/api/v1/search/movie/text', {query: query}).then(response=> {
+                    if (!response.result) {
+                        resolve([]);
+                        return;
+                    }
                     var results = response.result.map(content=> {
                         return self.getNew(content);
                     });

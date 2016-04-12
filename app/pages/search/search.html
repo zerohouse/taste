@@ -1,11 +1,28 @@
 <div flex layout="column">
     <div flex layout="column" class="wrapper">
-        <div class="container">
-            <md-input-container class="md-block movie-search">
-                <label>검색어</label>
-                <md-icon><i>search</i></md-icon>
-                <input ng-model="ctrl.keyword">
-            </md-input-container>
+        <div class="container margin-top" layout="row" style="min-height: 70px">
+            <!--<md-input-container flex class="md-block movie-search">-->
+                <!--<label>검색어</label>-->
+                <!--<md-icon><i>search</i></md-icon>-->
+                <!--<input ng-model="ctrl.keyword">-->
+            <!--</md-input-container>-->
+            <md-autocomplete flex class="margin-top-xs margin-left-s"
+                             ng-disabled="ctrl.isDisabled"
+                             md-no-cache="ctrl.noCache"
+                             md-selected-item="ctrl.selectedItem"
+                             md-search-text="ctrl.searchText"
+                             md-selected-item-change="ctrl.search(item.title)"
+                             md-items="item in ctrl.querySearch(ctrl.searchText)"
+                             md-item-text="item.title"
+                             md-min-length="0"
+                             placeholder="컨텐츠 검색">
+                <md-item-template>
+                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.title}}</span>
+                </md-item-template>
+            </md-autocomplete>
+            <div>
+                <md-button class="md-raised" ng-click="ctrl.search(item.searchText)">검색</md-button>
+            </div>
         </div>
         <div flex class="overlay">
             <div class="container">

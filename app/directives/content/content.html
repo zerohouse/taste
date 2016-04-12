@@ -6,10 +6,8 @@
                 <br>
                 컬렉션에 추가하기
             </div>
-            <div ng-if="user.contents.findById(content.id)">
-                <br>
+            <div layout-padding ng-if="user.contents.findById(content.id)">
                 <span ng-bind-html="content.comment.newLine()||'생각을 남겨주세요.'"></span>
-                <br>
             </div>
         </div>
     </div>

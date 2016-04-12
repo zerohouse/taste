@@ -1,26 +1,47 @@
 (function () {
     angular.module('app').controller('searchCtrl', searchCtrl);
     /* @ng-inject */
-    function searchCtrl($scope, $timeout, contentFactory, Defaults, $state) {
-        var ajax, self = this;
+    function searchCtrl($scope, $timeout, contentFactory, Defaults, $state, $q) {
+        var self = this;
         this.keyword = '';
         this.contents = Defaults[$state.current.name];
 
 
-        $scope.$watch(()=> {
-            return this.keyword;
-        }, keyword=> {
-            $timeout.cancel(ajax);
+        // $scope.$watch(()=> {
+        //     return this.keyword;
+        // }, keyword=> {
+        //     $timeout.cancel(ajax);
+        //     if (!keyword) {
+        //         self.contents = Defaults[$state.current.name];
+        //         return;
+        //     }
+        //     ajax = $timeout(function () {
+        //         contentFactory.search($state.current.name, keyword).then(function (results) {
+        //             self.contents = results;
+        //         });
+        //     }, 300);
+        // });
+
+        this.search = function (keyword) {
             if (!keyword) {
-                self.contents = Defaults[$state.current.name];
+                this.contents = Defaults[$state.current.name];
                 return;
             }
-            ajax = $timeout(function () {
-                contentFactory.search($state.current.name, keyword).then(function (results) {
-                    self.contents = results;
+            contentFactory.search($state.current.name, keyword).then(function (results) {
+                self.contents = results;
+            });
+        };
+
+        this.querySearch = (keyword)=> {
+            if (!keyword)
+                return $q(resolve=> {
+                    resolve([]);
                 });
-            }, 300);
-        });
+            if ($state.current.name === 'movie') {
+                return contentFactory.searchMovieText(keyword);
+            }
+            return contentFactory.search($state.current.name, keyword);
+        };
 
     }
 })();
