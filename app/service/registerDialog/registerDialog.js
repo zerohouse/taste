@@ -14,12 +14,12 @@
     }
 
     /* @ng-inject */
-    function RegisterController($scope, rootUser, $mdDialog, $ajax, alert, contentFactory, Chat, Alarm) {
+    function RegisterController($scope, rootUser, $mdDialog, $ajax, alert, contentFactory, Chat) {
         $scope.user = rootUser;
         $scope.cancel = $mdDialog.cancel;
         $scope.register = user => {
             $ajax.post('/api/v1/user', user).then(response=> {
-                rootUser.setProperties(response.result, contentFactory, Chat, Alarm);
+                rootUser.setProperties(response.result, contentFactory, Chat);
                 alert("회원가입이 완료되었습니다.");
                 $mdDialog.hide();
             });

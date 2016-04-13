@@ -6,10 +6,11 @@
             <md-tab-label>
                 {{c.getName()}}
                 <small>({{c.status}})</small>
+                <md-icon class="chat-close" ng-click="ctrl.closeChat(c, $event)"><i>close</i></md-icon>
             </md-tab-label>
         </md-tab>
     </md-tabs>
-    <div flex style="position:relative" id="chat-list" class="overlay" scroll-glue>
+    <div flex id="chat-list" class="overlay" scroll-glue ng-if="ctrl.chat">
         <md-list flex>
             <md-list-item class="md-2-line" ng-repeat="message in ctrl.chat.messages | orderBy:'createAt'">
                 <img ng-if="message.user.id!==root.user.id" ng-src="{{message.user.photo}}" class="md-avatar"
@@ -24,7 +25,7 @@
             </md-list-item>
         </md-list>
     </div>
-    <div layout="row" style="min-height: 94px; margin-top:30px;">
+    <div layout="row" style="min-height: 94px; margin-top:30px;" ng-if="ctrl.chat">
         <md-input-container flex ng-enter="ctrl.sendMessage(ctrl.chat, message)">
             <label>내용</label>
             <input maxlength="200" ng-model="message" type="text">
