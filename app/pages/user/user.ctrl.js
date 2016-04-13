@@ -3,7 +3,12 @@
     /* @ng-inject */
     function userCtrl($ajax, alert, Upload, rootUser, confirm) {
         this.update = function (user) {
-            $ajax.post('/api/v1/user/update', user).then(()=> {
+            var query = {};
+            angular.copy(user, query);
+            query.contents = undefined;
+            query.matchedUsers = undefined;
+            query.chats = undefined;
+            $ajax.post('/api/v1/user/update', query).then(()=> {
                 alert("정보가 업데이트 되었습니다.");
             });
         };

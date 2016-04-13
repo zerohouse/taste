@@ -12,6 +12,7 @@
             this.email = properties.email;
             this.gender = properties.gender;
             this.age = properties.age;
+            this.introduce = properties.introduce;
             this.district = properties.district;
             this.contents = properties.contents;
             this.matchedUsers = properties.matchedUsers;
