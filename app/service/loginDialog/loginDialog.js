@@ -14,12 +14,12 @@
     }
 
     /* @ng-inject */
-    function LoginController($scope, rootUser, $mdDialog, alert, $ajax, contentFactory, Chat, Alarm) {
+    function LoginController($scope, rootUser, $mdDialog, alert, $ajax, contentFactory, Chat) {
         $scope.user = rootUser;
         $scope.cancel = $mdDialog.cancel;
         $scope.login = user => {
             $ajax.post('/api/v1/user/login', user).then(response=> {
-                rootUser.setProperties(response.result, contentFactory, Chat, Alarm);
+                rootUser.setProperties(response.result, contentFactory, Chat);
                 alert("로그인 되었습니다.");
                 $mdDialog.hide();
             });

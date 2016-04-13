@@ -4,7 +4,7 @@
     function rootUser() {
         this.email = "parksungho86@gmail.com";
         this.password = "qkrtjdgh1";
-        this.setProperties = (properties, contentFactory, Chat, Alarm) => {
+        this.setProperties = (properties, contentFactory, Chat) => {
             if (!properties)
                 return;
             this.id = properties.id;
@@ -17,9 +17,6 @@
             this.matchedUsers = properties.matchedUsers;
             this.chats = properties.chats.map(chat=> {
                 return new Chat(chat);
-            });
-            this.alarms = properties.alarms.map(alarm=> {
-                return new Alarm(alarm);
             });
             this.contents = properties.contents.map(content=> {
                 return contentFactory.getNew(content);

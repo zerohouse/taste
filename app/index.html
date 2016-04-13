@@ -109,24 +109,6 @@
                 <span>{{root.state.current.title}}</span>
             </h2>
             <span flex></span>
-            <md-menu md-position-mode="left target" md-offset="-200 50">
-                <md-button aria-label="notification" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-                    <md-icon><i>notifications</i></md-icon>
-                    <span class="new" ng-if="root.hasNewAlarm()">n</span>
-                </md-button>
-                <md-menu-content width="6">
-                    <md-menu-item ng-if="!root.user.alarms || root.user.alarms.length === 0">
-                        <md-button>
-                            새 소식이 없습니다.
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item ng-repeat="alarm in root.user.alarms">
-                        <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span>
-                            {{item}}
-                        </md-button>
-                    </md-menu-item>
-                </md-menu-content>
-            </md-menu>
         </div>
     </md-toolbar>
     <div ui-view flex layout="column"></div>
@@ -167,7 +149,6 @@
 <script src="/directives/content/content.js"></script>
 <script src="/directives/usercard/user-card.js"></script>
 <script src="/lib/angular-grid.js"></script>
-<script src="/model/alarm.js"></script>
 <script src="/model/chat/chat.js"></script>
 <script src="/model/chat/message.js"></script>
 <script src="/model/content/book.js"></script>
