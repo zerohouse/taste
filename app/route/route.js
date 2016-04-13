@@ -42,11 +42,11 @@ angular.module('app')
                 controllerAs: 'ctrl',
                 title: "내 정보"
             })
-            .state("message", {
-                name: "message",
-                url: "/message",
-                templateUrl: '/pages/message/message.html',
-                controller: 'msgCtrl',
+            .state("chat", {
+                name: "chat",
+                url: "/chat",
+                templateUrl: '/pages/chat/chat.html',
+                controller: 'chatCtrl',
                 controllerAs: 'ctrl',
                 title: "대화"
             })

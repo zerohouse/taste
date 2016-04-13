@@ -7,9 +7,9 @@
 
     <!-- build:css(.) /styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
-    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
@@ -45,7 +45,6 @@
 <md-sidenav
         md-component-id="nav"
         md-is-locked-open="$mdMedia('gt-md')"
-        md-disable-backdrop
         md-whiteframe="4">
     <md-toolbar class="md-theme-indigo">
         <h1 class="md-toolbar-tools" ng-click="root.go('main')">서비스 이름 미정</h1>
@@ -55,9 +54,9 @@
             <md-icon><i>people</i></md-icon>
             <p>비슷한 취향의 사람</p>
         </md-list-item>
-        <md-list-item ng-click="root.go('message')">
+        <md-list-item ng-click="root.go('chat')">
             <md-icon><i>person</i></md-icon>
-            <p>메세지</p>
+            <p>대화</p>
         </md-list-item>
         <md-divider></md-divider>
         <md-list-item ng-click="root.go('movie')">
@@ -110,9 +109,24 @@
                 <span>{{root.state.current.title}}</span>
             </h2>
             <span flex></span>
-            <md-button class="md-icon-button" aria-label="Settings">
-                <md-icon><i>notifications</i></md-icon>
-            </md-button>
+            <md-menu md-position-mode="left target" md-offset="-200 50">
+                <md-button aria-label="notification" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                    <md-icon><i>notifications</i></md-icon>
+                    <span class="new" ng-if="root.hasNewAlarm()">n</span>
+                </md-button>
+                <md-menu-content width="6">
+                    <md-menu-item ng-if="!root.user.alarms || root.user.alarms.length === 0">
+                        <md-button>
+                            새 소식이 없습니다.
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item ng-repeat="alarm in root.user.alarms">
+                        <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span>
+                            {{item}}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
         </div>
     </md-toolbar>
     <div ui-view flex layout="column"></div>
@@ -136,6 +150,7 @@
 <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="/bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
 <script src="/bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="/bower_components/angular-scroll-glue/src/scrollglue.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -145,20 +160,24 @@
 <script src="/app.prototype.js"></script>
 <script src="/app.theming.js"></script>
 <script src="/config/ajax.handler.js"></script>
+<script src="/config/moment.js"></script>
 <script src="/directives/collections/collections.js"></script>
 <script src="/directives/content-summary/content-summary.js"></script>
 <script src="/directives/content/content.directive.ctrl.js"></script>
 <script src="/directives/content/content.js"></script>
 <script src="/directives/usercard/user-card.js"></script>
 <script src="/lib/angular-grid.js"></script>
-<script src="/model/book.js"></script>
-<script src="/model/content.factory.js"></script>
-<script src="/model/movie.js"></script>
-<script src="/model/music.js"></script>
+<script src="/model/alarm.js"></script>
+<script src="/model/chat/chat.js"></script>
+<script src="/model/chat/message.js"></script>
+<script src="/model/content/book.js"></script>
+<script src="/model/content/content.factory.js"></script>
+<script src="/model/content/movie.js"></script>
+<script src="/model/content/music.js"></script>
+<script src="/pages/chat/chat.ctrl.js"></script>
 <script src="/pages/collection/collection.ctrl.js"></script>
 <script src="/pages/main/main.ctrl.js"></script>
 <script src="/pages/match/match.ctrl.js"></script>
-<script src="/pages/message/msg.ctrl.js"></script>
 <script src="/pages/root.ctrl.js"></script>
 <script src="/pages/search/search.ctrl.js"></script>
 <script src="/pages/user/user.ctrl.js"></script>

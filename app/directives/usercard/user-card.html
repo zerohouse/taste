@@ -4,10 +4,11 @@
     <div class="info">
         <div>{{user.name}}</div>
         <small>{{user.age}}, {{user.gender}}, {{user.district}}, {{user.introduce}}</small>
+        <div ng-click="inviteChat()">대화 신청</div>
     </div>
 </div>
-<div class="body">
-    <md-list flex>
+<div class="body" layout="column">
+    <md-list flex class="overlay">
         <md-list-item class="md-3-line" ng-click="null" ng-repeat="content in contents | limitTo : 3">
             <img ng-if="content.type === 'MOVIE' || content.type === 'BOOK'" alt="{{content.title}}" class="md-avatar"
                  ng-src="{{ content.image || '/resources/icons/movie.png' }}"/>

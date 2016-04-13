@@ -1,5 +1,6 @@
 <div flex class="overlay">
     <div class="container" layout="column">
-        <user-card contents="root.user.contents" user="root.user"></user-card>
+        <h3 ng-if="!root.user.matchedUsers || root.user.matchedUsers.length === 0">아직 매칭된 사용자가 없습니다.</h3>
+        <user-card user="user" ng-repeat="user in root.user.matchedUsers"></user-card>
     </div>
 </div>

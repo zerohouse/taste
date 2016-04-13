@@ -34,6 +34,12 @@
                 });
             });
         };
+
+        this.hasNewAlarm = function () {
+            return rootUser.alarms.find(alarm=> {
+                return !alarm.check;
+            });
+        };
     }
 
 })();

@@ -1,0 +1,36 @@
+<div class="container" flex layout="column">
+    <h3 ng-if="!ctrl.chat">채팅이 없습니다.</h3>
+    <md-tabs>
+        <md-tab md-on-select="ctrl.selectChat(c)"
+                ng-repeat="c in root.user.chats">
+            <md-tab-label>
+                {{c.getName()}}
+                <small>({{c.status}})</small>
+            </md-tab-label>
+        </md-tab>
+    </md-tabs>
+    <div flex style="position:relative" id="chat-list" class="overlay" scroll-glue>
+        <md-list flex>
+            <md-list-item class="md-2-line" ng-repeat="message in ctrl.chat.messages | orderBy:'createAt'">
+                <img ng-if="message.user.id!==root.user.id" ng-src="{{message.user.photo}}" class="md-avatar"
+                     alt="{{message.user.name}}"/>
+                <div class="md-list-item-text" ng-class="{myword:message.user.id===root.user.id}" layout="column">
+                    <p><span ng-if="message.user.id!==root.user.id">{{message.user.name}}</span>
+                        <small>{{message.createAt.toYMD()}}</small>
+                    </p>
+                    <h3>{{message.message}}</h3>
+                </div>
+                <md-divider class="dotted" ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+    </div>
+    <div layout="row" style="min-height: 94px; margin-top:30px;">
+        <md-input-container flex ng-enter="ctrl.sendMessage(ctrl.chat, message)">
+            <label>내용</label>
+            <input maxlength="200" ng-model="message" type="text">
+        </md-input-container>
+        <div>
+            <md-button class="md-raised" ng-click="ctrl.sendMessage(ctrl.chat, message)">전송</md-button>
+        </div>
+    </div>
+</div>

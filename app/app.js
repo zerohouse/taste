@@ -9,5 +9,6 @@ angular
         'ngSanitize',
         'vcRecaptcha',
         'angularGrid',
-        'ngFileUpload'
+        'ngFileUpload',
+        'luegg.directives'
     ]);
