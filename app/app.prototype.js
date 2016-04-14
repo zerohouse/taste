@@ -137,11 +137,13 @@ Array.prototype.findById = function (id) {
     return this.findBy("id", id);
 };
 
+/* jshint ignore:start */
 Array.prototype.findBy = function (name, value) {
     return this.find(function (el) {
-        return el[name] === value;
+        return el[name] == value;
     });
 };
+/* jshint ignore:end */
 
 Array.prototype.removeBy = function (name, id) {
     return this.remove(this.findBy(name, id));

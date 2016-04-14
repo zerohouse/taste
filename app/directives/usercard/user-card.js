@@ -19,6 +19,13 @@
                         });
                     });
                 };
+
+                $scope.findChat = function (user) {
+                    return rootUser.chats.find(chat=> {
+                        return chat.hostUser.id === user.id || chat.invitedUser.id === user.id;
+                    });
+                };
+
             }
         };
     }

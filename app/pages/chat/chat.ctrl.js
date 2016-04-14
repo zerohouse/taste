@@ -1,9 +1,21 @@
 (function () {
     angular.module('app').controller('chatCtrl', chatCtrl);
     /* @ng-inject */
-    function chatCtrl($ajax, Message, alert, $mdDialog, rootUser, confirm) {
+    function chatCtrl($ajax, Message, alert, $mdDialog, rootUser, confirm, $stateParams, $scope) {
 
-        this.sendMessage = function (chat, message) {
+        var self = this;
+
+        $scope.$watch(()=> {
+            return $stateParams.id;
+        }, id=> {
+            if (!id) {
+                self.selectChat(rootUser.chats[0]);
+                return;
+            }
+            self.selectChat(rootUser.chats.findById(id));
+        });
+
+        this.sendMessage = function (chat) {
             if (chat.state === "NOT_ACCEPTED") {
                 alert.window("아직 대화가 시작되지 않았습니다.");
                 return;
@@ -16,8 +28,9 @@
                 alert.window("닫힌 대화입니다.");
                 return;
             }
-            $ajax.post('/api/v1/chat/message', {chat: chat.id, message: message}).then(function (response) {
+            $ajax.post('/api/v1/chat/message', {chat: chat.id, message: self.message}).then(function (response) {
                 chat.messages.push(new Message(response.result));
+                self.message = '';
             });
         };
 

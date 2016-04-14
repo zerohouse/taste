@@ -44,7 +44,7 @@ angular.module('app')
             })
             .state("chat", {
                 name: "chat",
-                url: "/chat",
+                url: "/chat?=id",
                 templateUrl: '/pages/chat/chat.html',
                 controller: 'chatCtrl',
                 controllerAs: 'ctrl',

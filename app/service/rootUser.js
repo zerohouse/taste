@@ -2,8 +2,6 @@
     angular.module('app').service('rootUser', rootUser);
     /* @ng-inject */
     function rootUser() {
-        this.email = "parksungho86@gmail.com";
-        this.password = "qkrtjdgh1";
         this.setProperties = (properties, contentFactory, Chat) => {
             if (!properties)
                 return;
@@ -14,7 +12,6 @@
             this.age = properties.age;
             this.introduce = properties.introduce;
             this.district = properties.district;
-            this.contents = properties.contents;
             this.matchedUsers = properties.matchedUsers;
             this.chats = properties.chats.map(chat=> {
                 return new Chat(chat);

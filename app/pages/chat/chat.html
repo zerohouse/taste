@@ -1,7 +1,7 @@
 <div class="container" flex layout="column">
     <h3 ng-if="!ctrl.chat">채팅이 없습니다.</h3>
-    <md-tabs>
-        <md-tab md-on-select="ctrl.selectChat(c)"
+    <md-tabs md-selected="root.user.chats.indexOf(ctrl.chat)">
+        <md-tab ng-click="ctrl.selectChat(c)"
                 ng-repeat="c in root.user.chats">
             <md-tab-label>
                 {{c.getName()}}
@@ -28,10 +28,10 @@
     <div layout="row" style="min-height: 94px; margin-top:30px;" ng-if="ctrl.chat">
         <md-input-container flex ng-enter="ctrl.sendMessage(ctrl.chat, message)">
             <label>내용</label>
-            <input maxlength="200" ng-model="message" type="text">
+            <input maxlength="200" ng-model="ctrl.message" type="text">
         </md-input-container>
         <div>
-            <md-button class="md-raised" ng-click="ctrl.sendMessage(ctrl.chat, message)">전송</md-button>
+            <md-button class="md-raised" ng-click="ctrl.sendMessage(ctrl.chat)">전송</md-button>
         </div>
     </div>
 </div>

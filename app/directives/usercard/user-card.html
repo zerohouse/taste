@@ -4,7 +4,9 @@
     <div class="info">
         <div>{{user.name}}</div>
         <small>{{user.age}}, {{user.gender}}, {{user.district}}, {{user.introduce}}</small>
-        <div ng-click="inviteChat()">대화 신청</div>
+        {{}}
+        <div ng-click="inviteChat()" ng-if="!findChat(user)">대화 신청</div>
+        <div ui-sref="chat({id:findChat(user).id})" ng-if="findChat(user)">대화창 가기</div>
     </div>
 </div>
 <div class="body" layout="column">
