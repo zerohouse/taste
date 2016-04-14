@@ -7,9 +7,9 @@
 
     <!-- build:css(.) /styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
-    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
@@ -51,15 +51,11 @@
         <h1 class="md-toolbar-tools" ng-click="root.go('main')">서비스 이름 미정</h1>
     </md-toolbar>
     <md-list>
-        <md-list-item ng-click="root.go('match')">
-            <md-icon><i>people</i></md-icon>
-            <p>비슷한 취향의 사람</p>
+        <md-list-item ng-click="root.go('collection');" ng-if="root.user.id">
+            <md-icon><i>person_add</i></md-icon>
+            <p>내 콜렉션</p>
+            <md-divider></md-divider>
         </md-list-item>
-        <md-list-item ng-click="root.go('chat')">
-            <md-icon><i>person</i></md-icon>
-            <p>대화</p>
-        </md-list-item>
-        <md-divider></md-divider>
         <md-list-item ng-click="root.go('movie')">
             <md-icon><i>movie</i></md-icon>
             <p>영화</p>
@@ -73,20 +69,14 @@
             <p>책</p>
         </md-list-item>
         <md-divider></md-divider>
-        <div ng-if="!root.user.id">
-            <md-list-item ng-click="root.login();">
-                <md-icon><i>person</i></md-icon>
-                <p>로그인</p>
-            </md-list-item>
-            <md-list-item ng-click="root.register();">
-                <md-icon><i>person_add</i></md-icon>
-                <p>회원가입</p>
-            </md-list-item>
-        </div>
         <div ng-if="root.user.id">
-            <md-list-item ng-click="root.go('collection');">
-                <md-icon><i>person_add</i></md-icon>
-                <p>내 콜렉션</p>
+            <md-list-item ng-click="root.go('match')">
+                <md-icon><i>people</i></md-icon>
+                <p>비슷한 취향의 사람</p>
+            </md-list-item>
+            <md-list-item ng-click="root.go('chat')">
+                <md-icon><i>person</i></md-icon>
+                <p>대화</p>
             </md-list-item>
             <md-divider></md-divider>
             <md-list-item ng-click="root.go('user')">
@@ -96,6 +86,16 @@
             <md-list-item ng-click="root.logout()">
                 <md-icon><i>person</i></md-icon>
                 <p>로그아웃</p>
+            </md-list-item>
+        </div>
+        <div ng-if="!root.user.id">
+            <md-list-item ng-click="root.login();">
+                <md-icon><i>person</i></md-icon>
+                <p>로그인</p>
+            </md-list-item>
+            <md-list-item ng-click="root.register();">
+                <md-icon><i>person_add</i></md-icon>
+                <p>회원가입</p>
             </md-list-item>
         </div>
     </md-list>
