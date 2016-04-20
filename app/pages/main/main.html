@@ -1,13 +1,45 @@
 <div flex class="overlay">
     <div class="container">
-        <div>이용방법?</div>
-        <div ng-click="root.openNewTab('https://docs.google.com/presentation/d/1BVgepqfcTk8wJJTzONwgWQzV5AeMnqHAOrQJalr270s/edit?usp=sharing')">소개 페이지</div>
-        <div>좋아하는 책 / 음악 / 영화를 고른다.</div>
-        <div>코멘트를 남긴다.(점수도 받을지 여부)</div>
-        <div>같은 책 / 음악 /영화를 좋아하는 이성이 매칭된다.(0~3명?)</div>
-        <div>작품에 대해 서로가 남긴 코멘트를 확인할 수 있다.</div>
-        <div>이후는 알아서.. 둘이서 이야기</div>
-        <div>메세지 - 한 3개 무료? 이후로 개당 백원씩??</div>
-        <div>지역별 / 나이별 매칭.</div>
+        <h1> 좋아하는 컨텐츠<small>를</small>
+            수집<small>하는 서비스</small>
+        </h1>
+        <h1>
+            <small>비슷한 취향의</small>
+            이성<small>을</small>
+            매칭<small>해주는 서비스</small>
+        </h1>
+        <h3> 1. 좋아하는 영화, 음악, 책을 수집하고 커맨트를 남깁니다. </h3>
+        <h3> 2. 같은 작품을 좋아하는 이성이 매칭됩니다. </h3>
+        <h3> 3. 매칭 후 대화 신청 / 수락을 하여 상대와 대화를 할 수 있습니다. </h3>
+        <h3> 남자 50명 / 여자 50명이상 모이면 매칭하겠습니다. </h3>
+        <h3> 현재 남자 {{ctrl.count.male}}명 / 여자 {{ctrl.count.female}}명이 모였습니다. </h3>
+    </div>
+
+    <div class="container" style="margin-top:100px">
+        <h5> 취직하게 되어서 그냥 접으려다가 그동안 만들었던거 아까워서 일단 공유해봅니다.<br> 쓰는 사람있으면 좋겠어요! 주말, 퇴근 후에 관리하도록 할게요. 대신
+            무료입니다. </h5>
+        <h5>
+            <!-- 아무래도 아무 인증도 없으면 안될 것 같아서 휴대폰 번호 인증 정도만 해 둘게요. <br>-->
+         서비스명 추천, 버그제보, 건의사항, 디자인 도움주실 분 이메일(<a href="mailto:parksungho86@gmail.com">parksungho86@gmail.com</a>),
+            카카오톡 아이디 zerohouse3으로 연락주세요. </h5>
+    </div>
+
+
+    <div class="container" style="margin-top:100px">
+        <h3> 의견 </h3>
+        <div layout="row">
+            <md-input-container flex>
+                <label>내용</label>
+                <input ng-enter="ctrl.write()" maxlength="200" ng-model="ctrl.message" type="text">
+            </md-input-container>
+            <div>
+                <md-button class="md-raised" ng-click="ctrl.write()">댓글달기</md-button>
+            </div>
+        </div>
+        <div ng-repeat="reply in ctrl.replies | orderBy : '-id'" class="margin-top-s"> {{reply.message}}
+            <small class="grey"> - {{reply.user.name}} {{reply.createAt.toYMD()}} <span ng-if="root.user.id === reply.user.id"
+                                                                           ng-click="reply.delete()">삭제</span></small>
+        </div>
     </div>
 </div>
+

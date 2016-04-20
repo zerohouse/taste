@@ -8,7 +8,7 @@ angular.module('app')
                 templateUrl: '/pages/main/main.html',
                 controller: 'mainCtrl',
                 controllerAs: 'ctrl',
-                title: "메인"
+                title: "여긴 어디? 이건 뭐?"
             })
             .state("movie", {
                 name: "movie",

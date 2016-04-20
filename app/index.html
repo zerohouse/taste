@@ -7,9 +7,9 @@
 
     <!-- build:css(.) /styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css"/>
-    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
+    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
@@ -69,16 +69,17 @@
             <p>책</p>
         </md-list-item>
         <md-divider></md-divider>
+
+        <md-list-item ng-click="root.go('match')">
+            <md-icon><i>people</i></md-icon>
+            <p>비슷한 취향의 사람</p>
+        </md-list-item>
+        <md-list-item ng-click="root.go('chat')">
+            <md-icon><i>person</i></md-icon>
+            <p>대화</p>
+        </md-list-item>
+        <md-divider></md-divider>
         <div ng-if="root.user.id">
-            <md-list-item ng-click="root.go('match')">
-                <md-icon><i>people</i></md-icon>
-                <p>비슷한 취향의 사람</p>
-            </md-list-item>
-            <md-list-item ng-click="root.go('chat')">
-                <md-icon><i>person</i></md-icon>
-                <p>대화</p>
-            </md-list-item>
-            <md-divider></md-divider>
             <md-list-item ng-click="root.go('user')">
                 <md-icon><i>person</i></md-icon>
                 <p>내 정보</p>
@@ -173,6 +174,7 @@
 <script src="/service/registerDialog/registerDialog.js"></script>
 <script src="/service/rootUser.js"></script>
 <script src="/service/rootUser.loggedcheck.js"></script>
+<script src="/template.js"></script>
 <!-- /include -->
 <!-- endbuild -->
 
