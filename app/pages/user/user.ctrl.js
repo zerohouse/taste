@@ -2,16 +2,33 @@
     angular.module('app').controller('userCtrl', userCtrl);
     /* @ng-inject */
     function userCtrl($ajax, alert, Upload, rootUser, confirm) {
+
+        this.phone = rootUser.phone;
+        this.matching = rootUser.matching;
+
+        var self = this;
+
         this.update = function (user) {
             var query = {};
             angular.copy(user, query);
+            query.phone = self.phone;
             query.contents = undefined;
             query.matchedUsers = undefined;
             query.chats = undefined;
+            query.matching = self.matching;
             $ajax.post('/api/v1/user/update', query).then(()=> {
+                user.phone = self.phone;
                 alert("정보가 업데이트 되었습니다.");
+                user.matching = self.matching;
             });
         };
+
+        this.requestPhoneAuth = function (phone) {
+            $ajax.post('/api/v1/auth/phone', {phone: phone}).then(()=> {
+                alert("인증번호를 전송하였습니다.");
+            });
+        };
+
 
         this.uploadFile = function (file) {
             if (!file)

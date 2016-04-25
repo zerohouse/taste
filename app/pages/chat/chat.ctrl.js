@@ -9,7 +9,8 @@
             return $stateParams.id;
         }, id=> {
             if (!id) {
-                self.selectChat(rootUser.chats[0]);
+                if (rootUser.chats)
+                    self.selectChat(rootUser.chats[0]);
                 return;
             }
             self.selectChat(rootUser.chats.findById(id));

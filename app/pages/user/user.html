@@ -1,7 +1,7 @@
 <div class="overlay">
     <div class="container">
-        <md-button class="md-raised" ng-click="showCard = !showCard">카드 <span ng-show="!showCard">보이기</span><span ng-show="showCard">숨기기</span></md-button>
-        <user-card ng-show="showCard" user="root.user" contents="root.user.contents"></user-card>
+        <!--<md-button class="md-raised" ng-click="showCard = !showCard">카드 <span ng-show="!showCard">보이기</span><span ng-show="showCard">숨기기</span></md-button>-->
+        <!--<user-card ng-show="showCard" user="root.user" contents="root.user.contents"></user-card>-->
         <div class="profile-header" layout="row" layout-align="center center">
             <div class="profile">
                 <img ngf-drop="ctrl.uploadFile($file)" ngf-select="ctrl.uploadFile($file)"
@@ -15,6 +15,19 @@
                 <label>이름</label>
                 <input ng-model="root.user.name">
             </md-input-container>
+            <div layout="row">
+                <md-input-container class="non-margin-bottom" flex>
+                    <label>연락처</label>
+                    <input maxlength="13" phone-input ng-model="ctrl.phone">
+                </md-input-container>
+                <div ng-show="root.user.phone !== ctrl.phone">
+                    <md-button class="md-raised" ng-click="ctrl.requestPhoneAuth(ctrl.phone)">인증 번호 받기</md-button>
+                    <md-input-container class="non-margin-bottom" flex>
+                        <label>인증번호</label>
+                        <input number-only maxlength="3" ng-model="root.user.auth">
+                    </md-input-container>
+                </div>
+            </div>
             <md-input-container class="non-margin-bottom" flex>
                 <label>나이</label>
                 <input number-only ng-model="root.user.age">
@@ -48,6 +61,9 @@
                 <label>소개말</label>
                 <input type="text" ng-model="root.user.introduce">
             </md-input-container>
+            <md-checkbox ng-model="ctrl.matching">
+                이성 매칭을 원합니다.
+            </md-checkbox>
             <md-button ng-click="ctrl.update(root.user)" class="md-raised md-block">
                 저장하기
             </md-button>
