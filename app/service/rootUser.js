@@ -2,6 +2,9 @@
     angular.module('app').service('rootUser', rootUser);
     /* @ng-inject */
     function rootUser() {
+
+        var events = [];
+
         this.setProperties = (properties, contentFactory, Chat) => {
             if (!properties)
                 return;
@@ -22,6 +25,15 @@
             this.contents = properties.contents.map(content=> {
                 return contentFactory.getNew(content);
             });
+
+            events.forEach(fn=> {
+                fn();
+            });
+
+        };
+
+        this.pushEvent = function (fn) {
+            events.push(fn);
         };
 
         this.logout = () => {

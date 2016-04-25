@@ -1,12 +1,17 @@
 (function () {
     angular.module('app').controller('userCtrl', userCtrl);
     /* @ng-inject */
-    function userCtrl($ajax, alert, Upload, rootUser, confirm) {
-
-        this.phone = rootUser.phone;
-        this.matching = rootUser.matching;
+    function userCtrl($ajax, alert, Upload, rootUser, confirm, $timeout) {
 
         var self = this;
+
+        self.phone = rootUser.phone;
+        self.matching = rootUser.matching;
+
+        rootUser.pushEvent(function () {
+            self.phone = rootUser.phone;
+            self.matching = rootUser.matching;
+        });
 
         this.update = function (user) {
             var query = {};
