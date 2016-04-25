@@ -14,7 +14,7 @@
             this.age = properties.age;
             this.introduce = properties.introduce;
             this.district = properties.district;
-            this.matchedUsers = properties.matchedUsers
+            this.matchedUsers = properties.matchedUsers;
 
             this.chats = properties.chats.map(chat=> {
                 return new Chat(chat);
