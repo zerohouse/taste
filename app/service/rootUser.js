@@ -19,6 +19,12 @@
             this.district = properties.district;
             this.matchedUsers = properties.matchedUsers;
 
+            // this.matchedUsers.forEach(matched=>{
+            //     matched.contents = matched.contents.map(content=> {
+            //         return contentFactory.getNew(content);
+            //     });
+            // });
+
             this.chats = properties.chats.map(chat=> {
                 return new Chat(chat);
             });

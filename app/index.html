@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
     <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
-    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanslaoui.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
@@ -76,7 +75,7 @@
                 <p>비슷한 취향의 사람</p>
             </md-list-item>
             <md-list-item ng-click="root.go('chat')">
-                <md-icon><i>person</i></md-icon>
+                <md-icon><i>chat</i></md-icon>
                 <p>대화</p>
             </md-list-item>
             <md-divider></md-divider>
@@ -102,6 +101,11 @@
             </md-list-item>
         </div>
     </md-list>
+    <md-divider></md-divider>
+    <md-list-item ng-click="root.go('faq');">
+        <md-icon><i>question_answer</i></md-icon>
+        <p>서비스 의견</p>
+    </md-list-item>
 </md-sidenav>
 <div flex layout="column">
     <md-toolbar>
@@ -161,6 +165,7 @@
 <script src="/model/content/music.js"></script>
 <script src="/pages/chat/chat.ctrl.js"></script>
 <script src="/pages/collection/collection.ctrl.js"></script>
+<script src="/pages/faq/faq.ctrl.js"></script>
 <script src="/pages/main/main.ctrl.js"></script>
 <script src="/pages/match/match.ctrl.js"></script>
 <script src="/pages/page/page.ctrl.js"></script>

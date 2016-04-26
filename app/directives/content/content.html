@@ -18,6 +18,10 @@
         <i class="check">check</i>
         <i class="minus">remove</i>
     </md-icon>
+    <md-icon class="remove" ng-if="collection && user.contents.findById(content.id)"
+             ng-click="content.removeFromCollection($event);">
+        <i>remove</i>
+    </md-icon>
 </div>
 <div class="title">
     <div>{{content.title}}</div>

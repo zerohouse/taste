@@ -10,6 +10,14 @@ angular.module('app')
                 controllerAs: 'ctrl',
                 title: "아트나인"
             })
+            .state("faq", {
+                name: "faq",
+                url: "/faq",
+                templateUrl: '/pages/faq/faq.html',
+                controller: 'faqCtrl',
+                controllerAs: 'ctrl',
+                title: "서비스 의견"
+            })
             .state("movie", {
                 name: "movie",
                 url: "/movie",
@@ -56,7 +64,7 @@ angular.module('app')
                 templateUrl: '/pages/match/match.html',
                 controller: 'matchCtrl',
                 controllerAs: 'ctrl',
-                title: "나와 비슷한 것을 좋아하는"
+                title: "비슷한 취향의 사람"
             })
             .state("collection", {
                 name: "collection",

@@ -1,5 +1,5 @@
 content {
-  .added {
+  .added, .remove {
     position: Absolute;
     top: 5px;
     right: 7px;
@@ -55,8 +55,14 @@ content {
         color: #eee;
       }
     }
+    .remove {
+      display: none;
+    }
   }
   .wrapper:hover {
+    .remove {
+      display: block;
+    }
     .filter {
       display: block;
     }

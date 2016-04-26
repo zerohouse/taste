@@ -4,14 +4,15 @@
     <div class="info">
         <div>{{user.name}}</div>
         <small>{{user.age}}, {{user.gender}}, {{user.district}}, {{user.introduce}}</small>
-        {{}}
         <div ng-click="inviteChat()" ng-if="!findChat(user)">대화 신청</div>
         <div ui-sref="chat({id:findChat(user).id})" ng-if="findChat(user)">대화창 가기</div>
     </div>
 </div>
 <div class="body" layout="column">
+    <div class="title">함께 좋아하는 것들</div>
+    <md-divider></md-divider>
     <md-list flex class="overlay">
-        <md-list-item class="md-3-line" ng-click="null" ng-repeat="content in contents | limitTo : 3">
+        <md-list-item class="md-3-line" ng-click="null" ng-repeat="content in user.contents | limitTo : 3">
             <img ng-if="content.type === 'MOVIE' || content.type === 'BOOK'" alt="{{content.title}}" class="md-avatar"
                  ng-src="{{ content.image || '/resources/icons/movie.png' }}"/>
             <img alt="{{content.title}}" class="md-avatar" ng-if="content.type==='ARTIST'"

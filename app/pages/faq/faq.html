@@ -1,0 +1,21 @@
+<div class="container">
+    <h3> 서비스 의견 </h3>
+
+        <p>
+            <!-- 아무래도 아무 인증도 없으면 안될 것 같아서 휴대폰 번호 인증 정도만 해 둘게요. <br>-->
+            서비스명 추천, 버그제보, 건의사항, 디자인 도움주실 분 이메일(<a href="mailto:parksungho86@gmail.com">parksungho86@gmail.com</a>),
+            카카오톡 아이디 zerohouse3으로 연락주세요. </p>
+    <div layout="row">
+        <md-input-container flex>
+            <label>내용</label>
+            <input ng-enter="ctrl.write()" maxlength="200" ng-model="ctrl.message" type="text">
+        </md-input-container>
+        <div>
+            <md-button class="md-raised" ng-click="ctrl.write()">댓글달기</md-button>
+        </div>
+    </div>
+    <div ng-repeat="reply in ctrl.replies | orderBy : '-id'" class="margin-top-s"> {{reply.message}}
+        <small class="grey"> - {{reply.user.name}} {{reply.createAt.toYMD()}} <span ng-if="root.user.id === reply.user.id"
+                                                                                    ng-click="reply.delete()">삭제</span></small>
+    </div>
+</div>
