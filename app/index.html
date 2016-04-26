@@ -2,7 +2,7 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
-    <title>서비스 이름 미정</title>
+    <title>Artnine</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <!-- build:css(.) /styles/vendor.css -->
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/bower_components/angular-material-icons/angular-material-icons.css" />
     <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanslaoui.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) /styles/main.css -->
@@ -48,7 +49,7 @@
         md-is-locked-open="$mdMedia('gt-md')"
         md-whiteframe="4">
     <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools" ng-click="root.go('main')">서비스 이름 미정</h1>
+        <h1 class="md-toolbar-tools" ng-click="root.go('main')">Artnine.me</h1>
     </md-toolbar>
     <md-list>
         <md-list-item ng-click="root.go('collection');" ng-if="root.user.id">
@@ -162,6 +163,7 @@
 <script src="/pages/collection/collection.ctrl.js"></script>
 <script src="/pages/main/main.ctrl.js"></script>
 <script src="/pages/match/match.ctrl.js"></script>
+<script src="/pages/page/page.ctrl.js"></script>
 <script src="/pages/root.ctrl.js"></script>
 <script src="/pages/search/search.ctrl.js"></script>
 <script src="/pages/user/user.ctrl.js"></script>
@@ -175,7 +177,6 @@
 <script src="/service/registerDialog/registerDialog.js"></script>
 <script src="/service/rootUser.js"></script>
 <script src="/service/rootUser.loggedcheck.js"></script>
-<script src="/template.js"></script>
 <!-- /include -->
 <!-- endbuild -->
 

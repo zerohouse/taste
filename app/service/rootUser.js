@@ -23,7 +23,7 @@
                 return new Chat(chat);
             });
             this.contents = properties.contents.map(content=> {
-                return contentFactory.getNew(content);
+                return contentFactory.getRootUserContent(content);
             });
 
             events.forEach(fn=> {

@@ -8,7 +8,7 @@ angular.module('app')
                 templateUrl: '/pages/main/main.html',
                 controller: 'mainCtrl',
                 controllerAs: 'ctrl',
-                title: "여긴 어디? 이건 뭐?"
+                title: "아트나인"
             })
             .state("movie", {
                 name: "movie",
@@ -65,6 +65,14 @@ angular.module('app')
                 controller: 'collectionCtrl',
                 controllerAs: 'ctrl',
                 title: "내 콜렉션"
+            })
+            .state("page", {
+                name: "page",
+                url: "/:email",
+                templateUrl: '/pages/page/page.html',
+                controller: 'pageCtrl',
+                controllerAs: 'ctrl',
+                title: "페이지"
             });
 
         $urlRouterProvider.otherwise("/");

@@ -1,0 +1,13 @@
+<div flex class="overlay">
+    <div class="container">
+        <md-input-container class="md-block movie-search">
+            <label>검색어</label>
+            <md-icon><i>search</i></md-icon>
+            <input ng-model="ctrl.keyword">
+        </md-input-container>
+        <div angular-grid="ctrl.user.contents" ag-grid-width="200" ag-id="movies" class="dynamic-grid">
+            <content collection="true" content="content"
+                     ng-repeat="content in ctrl.user.contents | orderBy:'-updateAt'"></content>
+        </div>
+    </div>
+</div>

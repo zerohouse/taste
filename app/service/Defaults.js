@@ -8,15 +8,15 @@
         $ajax.get('/resources/data/data.json').then((response)=> {
             if (response.movies)
                 response.movies.forEach(movie=> {
-                    this.movie.push(contentFactory.getNew(movie));
+                    this.movie.push(contentFactory.getRootUserContent(movie));
                 });
             if (response.books)
                 response.books.forEach(book=> {
-                    this.book.push(contentFactory.getNew(book));
+                    this.book.push(contentFactory.getRootUserContent(book));
                 });
             if (response.musics)
                 response.musics.forEach(music=> {
-                    this.music.push(contentFactory.getNew(music));
+                    this.music.push(contentFactory.getRootUserContent(music));
                 });
         });
     }

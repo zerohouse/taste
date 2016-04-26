@@ -3,12 +3,16 @@
     /* @ng-inject */
     function contentFactory(Music, Movie, Book, $ajax, $q, rootUser) {
         var self = this;
-        this.getNew = function (content) {
+        this.getRootUserContent = function (content) {
             if (rootUser.contents) {
                 var exist = rootUser.contents.findById(content.id);
                 if (exist)
                     return exist;
             }
+            return this.getNew(content);
+        };
+        
+        this.getNew = function (content) {
             if (content.type === "SONG")
                 return new Music(content);
             if (content.type === "ALBUM")
@@ -29,7 +33,7 @@
                         return;
                     }
                     var results = response.result.map(content=> {
-                        return self.getNew(content);
+                        return self.getRootUserContent(content);
                     });
                     resolve(results);
                 });
@@ -44,7 +48,7 @@
                         return;
                     }
                     var results = response.result.map(content=> {
-                        return self.getNew(content);
+                        return self.getRootUserContent(content);
                     });
                     resolve(results);
                 });
